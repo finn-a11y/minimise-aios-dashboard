@@ -12,6 +12,7 @@ export default async function HomePage() {
         hoursSavedPerWeek={data.stats.hours_saved_per_week}
         automationsLive={data.stats.automations_live}
         tasksAutomated={data.stats.tasks_automated}
+        tasksTotal={data.stats.tasks_total}
         tagline={data.instance.tagline ?? data.instance.name}
       />
       <DepartmentGrid departments={data.departments} />
