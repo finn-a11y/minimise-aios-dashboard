@@ -1,6 +1,6 @@
 {
-  "$schema_version": "1",
-  "generated_at": "2026-05-06T22:11:06Z",
+  "$schema_version": "2",
+  "generated_at": "2026-05-06T22:25:38Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -27,155 +27,212 @@
       "tasks": [
         {
           "name": "Advance and halt outreach cadences",
-          "hours_per_week": 0,
-          "automated_by": "sales-outreach-run",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-outreach-run"
         },
         {
           "name": "Build a branded proposal with ROI numbers",
-          "hours_per_week": 0,
-          "automated_by": "sales-proposal-gen",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-proposal-gen"
         },
         {
           "name": "Draft daily outreach follow-up emails",
-          "hours_per_week": 0,
-          "automated_by": "sales-outreach-run",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-outreach-run"
         },
         {
           "name": "Generate a discovery-call overview deck",
-          "hours_per_week": 0,
-          "automated_by": "sales-overview-gen",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-overview-gen"
         },
         {
           "name": "Log outreach phone calls into the sheet",
-          "hours_per_week": 0,
-          "automated_by": "sales-outreach-run",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-outreach-run"
         },
         {
           "name": "Process a virtual sales call transcript",
-          "hours_per_week": 0,
-          "automated_by": "process-call",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "process-call"
         },
         {
           "name": "Research a competitor and produce a strategy report",
-          "hours_per_week": 0,
-          "automated_by": "sales-competitor-analysis",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-competitor-analysis"
         },
         {
           "name": "Scrape new leads from Google Maps and Apollo",
-          "hours_per_week": 0,
-          "automated_by": "sales-outreach-scrape",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "sales-outreach-scrape"
         },
         {
           "name": "Update ClickUp Pipeline after a sales call",
-          "hours_per_week": 0,
-          "automated_by": "process-call",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "process-call"
         },
         {
           "name": "Auto-draft replies to inbound outreach replies",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Auto-research a prospect before a discovery call",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Auto-transcript pipeline (Drive watcher kicks off process-call)",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Auto-update ClickUp Pipeline from phone-call recaps",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Generate weekly outreach performance report by vertical",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Move warm-reply scraped leads into ClickUp Pipeline",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Nudge owner on stale outreach leads after N days",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Process Wispr drops for non-outreach phone calls",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Schedule sales-outreach-run daily",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Standalone pipeline staleness sweep with Slack ping",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     },
@@ -187,51 +244,69 @@
       "tasks": [
         {
           "name": "Generate a client performance report",
-          "hours_per_week": 0,
-          "automated_by": "relationships-client-reporting",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "relationships-client-reporting"
         },
         {
           "name": "Auto-flag dormant clients with no contact for 60 days",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Auto-send weekly client performance reports",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Onboard a new client (ClickUp project, welcome email, Ziv handoff)",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Remind on partner check-in cadences (Leighton, Ladder Co)",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Suggest proactive client check-in slots in Calendar",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     },
@@ -243,139 +318,190 @@
       "tasks": [
         {
           "name": "Build, optimise, or audit a Claude Code skill",
-          "hours_per_week": 0,
-          "automated_by": "skill-builder",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "skill-builder"
         },
         {
           "name": "Draft a single Gmail in someone's voice",
-          "hours_per_week": 0,
-          "automated_by": "email-draft",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "email-draft"
         },
         {
           "name": "Draw an editable Excalidraw diagram from a description",
-          "hours_per_week": 0,
-          "automated_by": "excalidraw-diagram",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "excalidraw-diagram"
         },
         {
           "name": "Plan a non-trivial multi-step build before coding",
-          "hours_per_week": 0,
-          "automated_by": "explore",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "explore"
         },
         {
           "name": "Run today's ClickUp queue across the whole workspace",
-          "hours_per_week": 0,
-          "automated_by": "clickup-daily",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "scheduled",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "clickup-daily"
         },
         {
           "name": "Sync the public AIOS dashboard with brain content",
-          "hours_per_week": 0,
-          "automated_by": "dashboard-sync",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "dashboard-sync"
         },
         {
           "name": "Archive raw Wispr drops before processing",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Auto-update ClickUp Pipeline from any voice or text mention",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Daily morning summary of today's meetings with prep notes",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Drift audit on stale data/README.md and loose dept files",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Friday weekly pulse roll-up across pipeline, clients, and goals",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Generate a daily brief and post to Slack",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Polish smart email drafting for context-aware tone",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Process internal team meetings and sales roleplays",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Schedule clickup-daily to run automatically at 7:15 AM",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Send a Telegram or SMS summary after Claude completes a task",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Triage incoming Gmail with auto-labels and priority",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     },
@@ -387,43 +513,58 @@
       "tasks": [
         {
           "name": "Build, debug, or review an n8n workflow",
-          "hours_per_week": 0,
-          "automated_by": "dev-n8n-workflow",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "dev-n8n-workflow"
         },
         {
           "name": "Check the latest voice AI tech and platform news",
-          "hours_per_week": 0,
-          "automated_by": "dev-voice-ai-intel",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "dev-voice-ai-intel"
         },
         {
           "name": "Detect when a deployed Speed-to-Lead system breaks",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Per-client system health monitoring (response time, conversion)",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Weekly product metrics roll-up",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     },
@@ -435,59 +576,80 @@
       "tasks": [
         {
           "name": "Repurpose long-form content into LinkedIn posts",
-          "hours_per_week": 0,
-          "automated_by": "marketing-linkedin-content",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "marketing-linkedin-content"
         },
         {
           "name": "Research trending AI topics for YouTube content",
-          "hours_per_week": 0,
-          "automated_by": "marketing-content-research",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "marketing-content-research"
         },
         {
           "name": "Auto-publish LinkedIn posts on a cadence",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Generate YouTube descriptions and thumbnails from script",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Repurpose long-form into Shorts and Reels",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Schedule content research weekly",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Schedule voice AI intel weekly",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     },
@@ -499,35 +661,47 @@
       "tasks": [
         {
           "name": "Generate a filled service agreement Google Doc",
-          "hours_per_week": 0,
-          "automated_by": "finance-contract-gen",
           "importance": "medium",
           "queued": false,
-          "status": "done"
+          "status": "done",
+          "mode": "manual",
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": 0,
+          "automated_by": "finance-contract-gen"
         },
         {
           "name": "Chase overdue invoices automatically",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Roll up monthly P&L summary",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         },
         {
           "name": "Track MRR with a weekly snapshot",
-          "hours_per_week": 0,
-          "automated_by": null,
           "importance": "medium",
           "queued": false,
-          "status": "todo"
+          "status": "todo",
+          "mode": null,
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": null
         }
       ]
     }

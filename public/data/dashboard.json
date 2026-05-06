@@ -1,6 +1,6 @@
 {
-  "$schema_version": "1",
-  "generated_at": "2026-05-06T22:11:06Z",
+  "$schema_version": "2",
+  "generated_at": "2026-05-06T22:25:38Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -14,7 +14,12 @@
     "hours_saved_per_week": 0,
     "automations_live": 18,
     "tasks_automated": 21,
-    "tasks_total": 58
+    "tasks_total": 58,
+    "automation_modes": {
+      "manual": 20,
+      "scheduled": 1,
+      "event": 0
+    }
   },
   "departments": [
     {
@@ -24,47 +29,52 @@
       "tasks_automated": 9,
       "tasks_total": 19,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 9,
+        "scheduled": 0,
+        "event": 0
+      },
       "automations": [
         {
           "name": "Virtual call processor",
           "skill": "process-call",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Transcript in \u2014 ClickUp updated, send-over assets generated, follow-up email drafted."
         },
         {
           "name": "Competitor analyst",
           "skill": "sales-competitor-analysis",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Researches competitors in AI follow-up and voice AI and produces strategic positioning reports."
         },
         {
           "name": "Outreach cadence runner",
           "skill": "sales-outreach-run",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Drafts daily follow-up emails, advances cadences, scans replies, logs phone calls."
         },
         {
           "name": "Outreach lead scraper",
           "skill": "sales-outreach-scrape",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Scrapes leads from Google Maps + Apollo, dedups against the Outreach sheet, appends to Scraped tab."
         },
         {
           "name": "Overview deck generator",
           "skill": "sales-overview-gen",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Generates a branded HTML + PDF overview deck after a discovery call."
         },
         {
           "name": "Proposal generator",
           "skill": "sales-proposal-gen",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Builds branded Minimise proposals with ROI calculations from intake data or call notes."
         }
       ]
@@ -76,12 +86,17 @@
       "tasks_automated": 1,
       "tasks_total": 6,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 1,
+        "scheduled": 0,
+        "event": 0
+      },
       "automations": [
         {
           "name": "Client performance reporter",
           "skill": "relationships-client-reporting",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Generates client performance reports from Supabase analytics data."
         }
       ]
@@ -93,47 +108,52 @@
       "tasks_automated": 6,
       "tasks_total": 17,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 5,
+        "scheduled": 1,
+        "event": 0
+      },
       "automations": [
         {
           "name": "Daily ClickUp queue",
           "skill": "clickup-daily",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "scheduled",
           "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline parents."
         },
         {
           "name": "Single-email drafter",
           "skill": "email-draft",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Drafts a single Gmail in the sender's voice with the correct Minimise footer."
         },
         {
           "name": "Excalidraw diagrammer",
           "skill": "excalidraw-diagram",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Generates editable Excalidraw diagrams from a description."
         },
         {
           "name": "Multi-step build planner",
           "skill": "explore",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Plans non-trivial builds (skills, automations, restructures) and dispatches parallel execution."
         },
         {
           "name": "Skill builder",
           "skill": "skill-builder",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Guides creation, optimisation, and audit of Claude Code skills."
         },
         {
           "name": "Dashboard sync",
           "skill": "dashboard-sync",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Regenerates dashboard.json + tasks.json and pushes them to the public AIOS dashboard repo."
         }
       ]
@@ -145,19 +165,24 @@
       "tasks_automated": 2,
       "tasks_total": 5,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 2,
+        "scheduled": 0,
+        "event": 0
+      },
       "automations": [
         {
           "name": "n8n workflow assistant",
           "skill": "dev-n8n-workflow",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
         },
         {
           "name": "Voice AI intel monitor",
           "skill": "dev-voice-ai-intel",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Monitors voice AI technology, platforms, and industry developments on demand."
         }
       ]
@@ -169,19 +194,24 @@
       "tasks_automated": 2,
       "tasks_total": 7,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 2,
+        "scheduled": 0,
+        "event": 0
+      },
       "automations": [
         {
           "name": "Content research engine",
           "skill": "marketing-content-research",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Researches trending AI topics, tools, and developments for YouTube content planning."
         },
         {
           "name": "LinkedIn post generator",
           "skill": "marketing-linkedin-content",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Repurposes YouTube and short-form content into LinkedIn posts."
         }
       ]
@@ -193,12 +223,17 @@
       "tasks_automated": 1,
       "tasks_total": 4,
       "hours_saved_per_week": 0,
+      "automation_modes": {
+        "manual": 1,
+        "scheduled": 0,
+        "event": 0
+      },
       "automations": [
         {
           "name": "Service agreement generator",
           "skill": "finance-contract-gen",
           "status": "live",
-          "hours_per_week": 0,
+          "mode": "manual",
           "description": "Fills the Minimise service agreement template into a client-ready Google Doc."
         }
       ]
