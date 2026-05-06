@@ -105,7 +105,11 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
         total++;
         if (t.automated_by !== null) {
           automated++;
-          hours += t.hours_per_week;
+          // v0.2: prefer hours_saved_per_week; fall back to legacy hours_per_week
+          const saved =
+            t.hours_saved_per_week ??
+            (typeof t.hours_per_week === "number" ? t.hours_per_week : 0);
+          hours += saved;
         }
       }
     }

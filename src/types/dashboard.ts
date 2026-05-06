@@ -62,14 +62,20 @@ export interface DashboardData {
 
 export type TaskStatus = "done" | "queued" | "todo";
 export type TaskImportance = "high" | "medium" | "low";
+export type AutomationMode = "manual" | "scheduled" | "event";
 
 export interface Task {
   name: string;
-  hours_per_week: number;
+  hours_per_week?: number | null; // legacy — kept permissive; v0.2 sync replaces with manual/automated pair
   automated_by: string | null;
   importance: TaskImportance;
   queued: boolean;
   status: TaskStatus;
+  // v0.2 fields — may be undefined until L2a schema-sync PR merges
+  mode?: AutomationMode | null;
+  manual_hours_per_week?: number | null;
+  automated_hours_per_week?: number | null;
+  hours_saved_per_week?: number | null;
 }
 
 export interface TasksDepartment {

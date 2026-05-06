@@ -26,12 +26,27 @@ export function TasksDepartmentSection({
         </span>
       </summary>
       <table className="w-full border-t border-line">
-        <thead className="sr-only">
-          <tr>
-            <th>Status</th>
-            <th>Task</th>
-            <th>Hours per week</th>
-            <th>Automated by</th>
+        <thead>
+          <tr className="border-b border-line">
+            <th className="sr-only py-2 pr-4 text-left w-8">Status</th>
+            <th className="py-2 pr-4 text-left text-[10px] font-semibold tracking-widest uppercase text-ink-muted">
+              Task
+            </th>
+            <th className="py-2 pr-4 text-left text-[10px] font-semibold tracking-widest uppercase text-ink-muted w-24">
+              Mode
+            </th>
+            <th className="hidden md:table-cell py-2 pr-4 text-right text-[10px] font-semibold tracking-widest uppercase text-ink-muted w-16">
+              Was
+            </th>
+            <th className="hidden md:table-cell py-2 pr-4 text-right text-[10px] font-semibold tracking-widest uppercase text-ink-muted w-16">
+              Now
+            </th>
+            <th className="py-2 pr-4 text-right text-[10px] font-semibold tracking-widest uppercase text-ink-muted w-20">
+              Saved
+            </th>
+            <th className="py-2 text-left text-[10px] font-semibold tracking-widest uppercase text-ink-muted">
+              Automated by
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -39,9 +54,12 @@ export function TasksDepartmentSection({
             <TaskRow
               key={`${t.name}-${i}`}
               name={t.name}
-              hoursPerWeek={t.hours_per_week}
               automatedBy={t.automated_by}
               status={t.status}
+              mode={t.mode}
+              manualHoursPerWeek={t.manual_hours_per_week}
+              automatedHoursPerWeek={t.automated_hours_per_week}
+              hoursSavedPerWeek={t.hours_saved_per_week}
             />
           ))}
         </tbody>
