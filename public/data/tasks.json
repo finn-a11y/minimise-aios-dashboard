@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-06T22:25:38Z",
+  "generated_at": "2026-05-06T23:02:12Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -11,7 +11,7 @@
   "stats": {
     "tasks_automated": 21,
     "tasks_total": 58,
-    "hours_saved_per_week": 0,
+    "hours_saved_per_week": 38.6,
     "tasks_by_status": {
       "done": 21,
       "queued": 0,
@@ -31,9 +31,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 1.8,
           "automated_by": "sales-outreach-run"
         },
         {
@@ -42,9 +42,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 3.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 2.5,
           "automated_by": "sales-proposal-gen"
         },
         {
@@ -53,9 +53,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 4.0,
+          "automated_hours_per_week": 0.3,
+          "hours_saved_per_week": 3.7,
           "automated_by": "sales-outreach-run"
         },
         {
@@ -64,9 +64,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.5,
+          "automated_hours_per_week": 0.4,
+          "hours_saved_per_week": 2.1,
           "automated_by": "sales-overview-gen"
         },
         {
@@ -75,9 +75,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.5,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 1.3,
           "automated_by": "sales-outreach-run"
         },
         {
@@ -86,9 +86,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.3,
+          "hours_saved_per_week": 1.7,
           "automated_by": "process-call"
         },
         {
@@ -97,9 +97,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 3.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 2.5,
           "automated_by": "sales-competitor-analysis"
         },
         {
@@ -108,9 +108,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 4.0,
+          "automated_hours_per_week": 0.3,
+          "hours_saved_per_week": 3.7,
           "automated_by": "sales-outreach-scrape"
         },
         {
@@ -119,9 +119,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.5,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 1.3,
           "automated_by": "process-call"
         },
         {
@@ -248,9 +248,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 1.5,
           "automated_by": "relationships-client-reporting"
         },
         {
@@ -322,9 +322,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 3.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 2.5,
           "automated_by": "skill-builder"
         },
         {
@@ -333,9 +333,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 1.8,
           "automated_by": "email-draft"
         },
         {
@@ -344,9 +344,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.0,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 0.8,
           "automated_by": "excalidraw-diagram"
         },
         {
@@ -355,9 +355,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 3.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 2.5,
           "automated_by": "explore"
         },
         {
@@ -366,9 +366,9 @@
           "queued": false,
           "status": "done",
           "mode": "scheduled",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.5,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 1.3,
           "automated_by": "clickup-daily"
         },
         {
@@ -377,9 +377,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 0.5,
+          "automated_hours_per_week": 0.1,
+          "hours_saved_per_week": 0.4,
           "automated_by": "dashboard-sync"
         },
         {
@@ -517,9 +517,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 1.5,
           "automated_by": "dev-n8n-workflow"
         },
         {
@@ -528,9 +528,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.5,
+          "automated_hours_per_week": 0.3,
+          "hours_saved_per_week": 1.2,
           "automated_by": "dev-voice-ai-intel"
         },
         {
@@ -580,9 +580,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.0,
+          "automated_hours_per_week": 0.3,
+          "hours_saved_per_week": 1.7,
           "automated_by": "marketing-linkedin-content"
         },
         {
@@ -591,9 +591,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 2.5,
+          "automated_hours_per_week": 0.5,
+          "hours_saved_per_week": 2,
           "automated_by": "marketing-content-research"
         },
         {
@@ -665,9 +665,9 @@
           "queued": false,
           "status": "done",
           "mode": "manual",
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": 0,
+          "manual_hours_per_week": 1.0,
+          "automated_hours_per_week": 0.2,
+          "hours_saved_per_week": 0.8,
           "automated_by": "finance-contract-gen"
         },
         {

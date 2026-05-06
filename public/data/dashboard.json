@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-06T22:25:38Z",
+  "generated_at": "2026-05-06T23:02:12Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -11,7 +11,7 @@
     "background_color": "#ffffff"
   },
   "stats": {
-    "hours_saved_per_week": 0,
+    "hours_saved_per_week": 38.6,
     "automations_live": 18,
     "tasks_automated": 21,
     "tasks_total": 58,
@@ -28,7 +28,7 @@
       "automations_live": 6,
       "tasks_automated": 9,
       "tasks_total": 19,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 20.6,
       "automation_modes": {
         "manual": 9,
         "scheduled": 0,
@@ -85,7 +85,7 @@
       "automations_live": 1,
       "tasks_automated": 1,
       "tasks_total": 6,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 1.5,
       "automation_modes": {
         "manual": 1,
         "scheduled": 0,
@@ -107,7 +107,7 @@
       "automations_live": 6,
       "tasks_automated": 6,
       "tasks_total": 17,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 9.3,
       "automation_modes": {
         "manual": 5,
         "scheduled": 1,
@@ -164,7 +164,7 @@
       "automations_live": 2,
       "tasks_automated": 2,
       "tasks_total": 5,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 2.7,
       "automation_modes": {
         "manual": 2,
         "scheduled": 0,
@@ -193,7 +193,7 @@
       "automations_live": 2,
       "tasks_automated": 2,
       "tasks_total": 7,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 3.7,
       "automation_modes": {
         "manual": 2,
         "scheduled": 0,
@@ -222,7 +222,7 @@
       "automations_live": 1,
       "tasks_automated": 1,
       "tasks_total": 4,
-      "hours_saved_per_week": 0,
+      "hours_saved_per_week": 0.8,
       "automation_modes": {
         "manual": 1,
         "scheduled": 0,
