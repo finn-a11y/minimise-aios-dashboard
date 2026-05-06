@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type HeroProps = {
   hoursSavedPerWeek: number;
   automationsLive: number;
@@ -19,6 +21,16 @@ export function Hero({
   return (
     <section className="min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center px-6 md:px-12 py-12">
       <div className="flex flex-col items-center text-center w-full">
+        {/* Logo — above eyebrow */}
+        <Image
+          src="/minimise-logo.png"
+          alt="Minimise"
+          width={400}
+          height={92}
+          priority
+          className="h-16 w-auto mb-6"
+        />
+
         <p className="text-xs uppercase tracking-widest text-ink-muted mb-8">
           {tagline}
         </p>
