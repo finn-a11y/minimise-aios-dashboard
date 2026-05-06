@@ -1,6 +1,6 @@
 {
   "$schema_version": "1",
-  "generated_at": "2026-05-06T21:08:10Z",
+  "generated_at": "2026-05-06T21:49:37Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -70,91 +70,8 @@
       ]
     },
     {
-      "slug": "consulting",
-      "name": "Consulting",
-      "automations_live": 0,
-      "tasks_automated": 0,
-      "tasks_total": 0,
-      "hours_saved_per_week": 0,
-      "automations": []
-    },
-    {
-      "slug": "marketing",
-      "name": "Marketing",
-      "automations_live": 2,
-      "tasks_automated": 2,
-      "tasks_total": 7,
-      "hours_saved_per_week": 0,
-      "automations": [
-        {
-          "name": "Content research engine",
-          "skill": "marketing-content-research",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Researches trending AI topics, tools, and developments for YouTube content planning."
-        },
-        {
-          "name": "LinkedIn post generator",
-          "skill": "marketing-linkedin-content",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Repurposes YouTube and short-form content into LinkedIn posts."
-        }
-      ]
-    },
-    {
-      "slug": "product",
-      "name": "Product",
-      "automations_live": 0,
-      "tasks_automated": 0,
-      "tasks_total": 0,
-      "hours_saved_per_week": 0,
-      "automations": []
-    },
-    {
-      "slug": "dev",
-      "name": "Dev",
-      "automations_live": 2,
-      "tasks_automated": 2,
-      "tasks_total": 5,
-      "hours_saved_per_week": 0,
-      "automations": [
-        {
-          "name": "n8n workflow assistant",
-          "skill": "dev-n8n-workflow",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
-        },
-        {
-          "name": "Voice AI intel monitor",
-          "skill": "dev-voice-ai-intel",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Monitors voice AI technology, platforms, and industry developments on demand."
-        }
-      ]
-    },
-    {
-      "slug": "finance",
-      "name": "Finance",
-      "automations_live": 1,
-      "tasks_automated": 1,
-      "tasks_total": 4,
-      "hours_saved_per_week": 0,
-      "automations": [
-        {
-          "name": "Service agreement generator",
-          "skill": "finance-contract-gen",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Fills the Minimise service agreement template into a client-ready Google Doc."
-        }
-      ]
-    },
-    {
-      "slug": "relationships",
-      "name": "Relationships",
+      "slug": "delivery",
+      "name": "Delivery",
       "automations_live": 1,
       "tasks_automated": 1,
       "tasks_total": 6,
@@ -170,11 +87,11 @@
       ]
     },
     {
-      "slug": "company",
-      "name": "Company",
-      "automations_live": 6,
-      "tasks_automated": 6,
-      "tasks_total": 7,
+      "slug": "operations",
+      "name": "Operations",
+      "automations_live": 8,
+      "tasks_automated": 8,
+      "tasks_total": 22,
       "hours_saved_per_week": 0,
       "automations": [
         {
@@ -183,6 +100,20 @@
           "status": "live",
           "hours_per_week": 0,
           "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline parents."
+        },
+        {
+          "name": "n8n workflow assistant",
+          "skill": "dev-n8n-workflow",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
+        },
+        {
+          "name": "Voice AI intel monitor",
+          "skill": "dev-voice-ai-intel",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Monitors voice AI technology, platforms, and industry developments on demand."
         },
         {
           "name": "Single-email drafter",
@@ -220,36 +151,77 @@
           "description": "Regenerates dashboard.json + tasks.json and pushes them to the public AIOS dashboard repo."
         }
       ]
+    },
+    {
+      "slug": "marketing",
+      "name": "Marketing",
+      "automations_live": 2,
+      "tasks_automated": 2,
+      "tasks_total": 7,
+      "hours_saved_per_week": 0,
+      "automations": [
+        {
+          "name": "Content research engine",
+          "skill": "marketing-content-research",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Researches trending AI topics, tools, and developments for YouTube content planning."
+        },
+        {
+          "name": "LinkedIn post generator",
+          "skill": "marketing-linkedin-content",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Repurposes YouTube and short-form content into LinkedIn posts."
+        }
+      ]
+    },
+    {
+      "slug": "finance",
+      "name": "Finance",
+      "automations_live": 1,
+      "tasks_automated": 1,
+      "tasks_total": 4,
+      "hours_saved_per_week": 0,
+      "automations": [
+        {
+          "name": "Service agreement generator",
+          "skill": "finance-contract-gen",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Fills the Minimise service agreement template into a client-ready Google Doc."
+        }
+      ]
     }
   ],
   "coming_next": [
     {
       "name": "Daily brief \u2014 auto-generate every morning, post to Slack",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Schedule `clickup-daily` to run automatically at 7:15 AM",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Schedule `sales-outreach-run` daily",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Wispr archive \u2014 save raw drops before processing",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Drift audit \u2014 flag stale `data/README.md`, loose dept files",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
@@ -339,31 +311,31 @@
     },
     {
       "name": "Weekly client performance reports auto-sent",
-      "department": "relationships",
+      "department": "delivery",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Client check-in scheduling \u2014 proactive Calendar suggestions every N weeks",
-      "department": "relationships",
+      "department": "delivery",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Partner check-in cadence reminders (Leighton, Ladder Co)",
-      "department": "relationships",
+      "department": "delivery",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Auto-flag dormant clients (no contact >60 days)",
-      "department": "relationships",
+      "department": "delivery",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Client onboarding automation \u2014 after a lead converts in Pipeline, spin up ClickUp project from template, send welcome email, notify Ziv",
-      "department": "relationships",
+      "department": "delivery",
       "leverage": "M",
       "status": "backlog"
     },
@@ -387,61 +359,61 @@
     },
     {
       "name": "Per-client system health monitoring (response time, conversion)",
-      "department": "dev",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Auto-detect when a deployed Speed-to-Lead system breaks",
-      "department": "dev",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Weekly product metrics roll-up",
-      "department": "dev",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Email triage \u2014 auto-label and prioritize incoming Gmail",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Calendar prep \u2014 daily morning summary of today's meetings with prep notes",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Auto-update ClickUp Pipeline from any voice/text mention",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Internal-meeting skill \u2014 process internal team meetings + sales roleplays. Routes to `~/Desktop/minimise-intel/general/internal-meetings/` + `~/Desktop/minimise-intel/sales/roleplay-calls/`",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Smart email drafting \u2014 partially live in `email-draft` (already pulls per-person writing style). Track adapt-by-context refinements (cold vs client update vs follow-up)",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "L",
       "status": "backlog"
     },
     {
       "name": "Post-task notification \u2014 Telegram/SMS summary after Claude completes an automated task",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     },
     {
       "name": "Weekly pulse check \u2014 Friday roll-up across pipeline, client progress, goals; flag anything off track",
-      "department": "cross-cutting",
+      "department": "operations",
       "leverage": "M",
       "status": "backlog"
     }
