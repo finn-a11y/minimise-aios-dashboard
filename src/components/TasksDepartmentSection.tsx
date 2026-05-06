@@ -15,6 +15,8 @@ export function TasksDepartmentSection({
   tasksTotal,
   tasks,
 }: TasksDepartmentSectionProps) {
+  if (tasks.length === 0) return null;
+
   return (
     <details open className="mb-12">
       <summary className="cursor-pointer flex items-baseline justify-between gap-4 mb-4 list-none [&::-webkit-details-marker]:hidden">
@@ -39,6 +41,7 @@ export function TasksDepartmentSection({
               name={t.name}
               hoursPerWeek={t.hours_per_week}
               automatedBy={t.automated_by}
+              status={t.status}
             />
           ))}
         </tbody>
