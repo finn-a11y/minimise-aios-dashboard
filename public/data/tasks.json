@@ -1,6 +1,6 @@
 {
   "$schema_version": "1",
-  "generated_at": "2026-05-06T21:49:37Z",
+  "generated_at": "2026-05-06T22:00:07Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -158,23 +158,13 @@
     {
       "slug": "operations",
       "name": "Operations",
-      "tasks_automated": 8,
-      "tasks_total": 22,
+      "tasks_automated": 6,
+      "tasks_total": 17,
       "tasks": [
-        {
-          "name": "Build, debug, or review an n8n workflow",
-          "hours_per_week": 0,
-          "automated_by": "dev-n8n-workflow"
-        },
         {
           "name": "Build, optimise, or audit a Claude Code skill",
           "hours_per_week": 0,
           "automated_by": "skill-builder"
-        },
-        {
-          "name": "Check the latest voice AI tech and platform news",
-          "hours_per_week": 0,
-          "automated_by": "dev-voice-ai-intel"
         },
         {
           "name": "Draft a single Gmail in someone's voice",
@@ -217,11 +207,6 @@
           "automated_by": null
         },
         {
-          "name": "Detect when a deployed Speed-to-Lead system breaks",
-          "hours_per_week": 0,
-          "automated_by": null
-        },
-        {
           "name": "Drift audit on stale data/README.md and loose dept files",
           "hours_per_week": 0,
           "automated_by": null
@@ -233,11 +218,6 @@
         },
         {
           "name": "Generate a daily brief and post to Slack",
-          "hours_per_week": 0,
-          "automated_by": null
-        },
-        {
-          "name": "Per-client system health monitoring (response time, conversion)",
           "hours_per_week": 0,
           "automated_by": null
         },
@@ -263,6 +243,34 @@
         },
         {
           "name": "Triage incoming Gmail with auto-labels and priority",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
+      ]
+    },
+    {
+      "slug": "development",
+      "name": "Development",
+      "tasks_automated": 2,
+      "tasks_total": 5,
+      "tasks": [
+        {
+          "name": "Build, debug, or review an n8n workflow",
+          "hours_per_week": 0,
+          "automated_by": "dev-n8n-workflow"
+        },
+        {
+          "name": "Check the latest voice AI tech and platform news",
+          "hours_per_week": 0,
+          "automated_by": "dev-voice-ai-intel"
+        },
+        {
+          "name": "Detect when a deployed Speed-to-Lead system breaks",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Per-client system health monitoring (response time, conversion)",
           "hours_per_week": 0,
           "automated_by": null
         },

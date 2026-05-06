@@ -1,6 +1,6 @@
 {
   "$schema_version": "1",
-  "generated_at": "2026-05-06T21:49:37Z",
+  "generated_at": "2026-05-06T22:00:07Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -89,9 +89,9 @@
     {
       "slug": "operations",
       "name": "Operations",
-      "automations_live": 8,
-      "tasks_automated": 8,
-      "tasks_total": 22,
+      "automations_live": 6,
+      "tasks_automated": 6,
+      "tasks_total": 17,
       "hours_saved_per_week": 0,
       "automations": [
         {
@@ -100,20 +100,6 @@
           "status": "live",
           "hours_per_week": 0,
           "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline parents."
-        },
-        {
-          "name": "n8n workflow assistant",
-          "skill": "dev-n8n-workflow",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
-        },
-        {
-          "name": "Voice AI intel monitor",
-          "skill": "dev-voice-ai-intel",
-          "status": "live",
-          "hours_per_week": 0,
-          "description": "Monitors voice AI technology, platforms, and industry developments on demand."
         },
         {
           "name": "Single-email drafter",
@@ -149,6 +135,30 @@
           "status": "live",
           "hours_per_week": 0,
           "description": "Regenerates dashboard.json + tasks.json and pushes them to the public AIOS dashboard repo."
+        }
+      ]
+    },
+    {
+      "slug": "development",
+      "name": "Development",
+      "automations_live": 2,
+      "tasks_automated": 2,
+      "tasks_total": 5,
+      "hours_saved_per_week": 0,
+      "automations": [
+        {
+          "name": "n8n workflow assistant",
+          "skill": "dev-n8n-workflow",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
+        },
+        {
+          "name": "Voice AI intel monitor",
+          "skill": "dev-voice-ai-intel",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Monitors voice AI technology, platforms, and industry developments on demand."
         }
       ]
     },
@@ -359,19 +369,19 @@
     },
     {
       "name": "Per-client system health monitoring (response time, conversion)",
-      "department": "operations",
+      "department": "development",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Auto-detect when a deployed Speed-to-Lead system breaks",
-      "department": "operations",
+      "department": "development",
       "leverage": "S",
       "status": "backlog"
     },
     {
       "name": "Weekly product metrics roll-up",
-      "department": "operations",
+      "department": "development",
       "leverage": "M",
       "status": "backlog"
     },
