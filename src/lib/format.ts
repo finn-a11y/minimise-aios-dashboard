@@ -1,8 +1,4 @@
-export function formatHours(hours: number): string {
-  if (Number.isInteger(hours)) return `${hours}`;
+export function formatHours(hours: number | null | undefined): string {
+  if (hours == null) return "0";
   return hours.toFixed(1).replace(/\.0$/, "");
-}
-
-export function formatRatio(numerator: number, denominator: number): string {
-  return `${numerator}/${denominator}`;
 }
