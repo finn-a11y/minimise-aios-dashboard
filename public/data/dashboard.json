@@ -1,6 +1,6 @@
 {
   "$schema_version": "1",
-  "generated_at": "2026-05-07T10:14:00Z",
+  "generated_at": "2026-05-06T21:08:10Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -11,61 +11,61 @@
     "background_color": "#ffffff"
   },
   "stats": {
-    "hours_saved_per_week": 47,
+    "hours_saved_per_week": 0,
     "automations_live": 18,
-    "tasks_automated": 12,
-    "tasks_total": 80
+    "tasks_automated": 21,
+    "tasks_total": 58
   },
   "departments": [
     {
       "slug": "sales",
       "name": "Sales",
       "automations_live": 6,
-      "tasks_automated": 6,
-      "tasks_total": 18,
-      "hours_saved_per_week": 19,
+      "tasks_automated": 9,
+      "tasks_total": 19,
+      "hours_saved_per_week": 0,
       "automations": [
         {
-          "name": "Outreach scraping",
-          "skill": "sales-outreach-scrape",
+          "name": "Virtual call processor",
+          "skill": "process-call",
           "status": "live",
-          "hours_per_week": 4,
-          "description": "Auto-scrapes leads from Google Maps + Apollo, dedups against existing pipeline."
+          "hours_per_week": 0,
+          "description": "Transcript in \u2014 ClickUp updated, send-over assets generated, follow-up email drafted."
+        },
+        {
+          "name": "Competitor analyst",
+          "skill": "sales-competitor-analysis",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Researches competitors in AI follow-up and voice AI and produces strategic positioning reports."
         },
         {
           "name": "Outreach cadence runner",
           "skill": "sales-outreach-run",
           "status": "live",
-          "hours_per_week": 6,
-          "description": "Drafts daily follow-ups, advances cadences, logs phone calls."
+          "hours_per_week": 0,
+          "description": "Drafts daily follow-up emails, advances cadences, scans replies, logs phone calls."
         },
         {
-          "name": "Virtual call processor",
-          "skill": "process-call",
+          "name": "Outreach lead scraper",
+          "skill": "sales-outreach-scrape",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Transcript in, ClickUp updated + send-over assets generated + follow-up email drafted."
-        },
-        {
-          "name": "Proposal generator",
-          "skill": "sales-proposal-gen",
-          "status": "live",
-          "hours_per_week": 2,
-          "description": "Branded proposals with ROI calcs from intake or call notes."
+          "hours_per_week": 0,
+          "description": "Scrapes leads from Google Maps + Apollo, dedups against the Outreach sheet, appends to Scraped tab."
         },
         {
           "name": "Overview deck generator",
           "skill": "sales-overview-gen",
           "status": "live",
-          "hours_per_week": 3,
-          "description": "Branded HTML + PDF leave-behind deck after a discovery call."
+          "hours_per_week": 0,
+          "description": "Generates a branded HTML + PDF overview deck after a discovery call."
         },
         {
-          "name": "Competitor analysis",
-          "skill": "sales-competitor-analysis",
+          "name": "Proposal generator",
+          "skill": "sales-proposal-gen",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Strategic reports on AI follow-up and voice AI competitors."
+          "hours_per_week": 0,
+          "description": "Builds branded Minimise proposals with ROI calculations from intake data or call notes."
         }
       ]
     },
@@ -74,7 +74,7 @@
       "name": "Consulting",
       "automations_live": 0,
       "tasks_automated": 0,
-      "tasks_total": 6,
+      "tasks_total": 0,
       "hours_saved_per_week": 0,
       "automations": []
     },
@@ -83,22 +83,22 @@
       "name": "Marketing",
       "automations_live": 2,
       "tasks_automated": 2,
-      "tasks_total": 12,
-      "hours_saved_per_week": 5,
+      "tasks_total": 7,
+      "hours_saved_per_week": 0,
       "automations": [
         {
-          "name": "Content research",
+          "name": "Content research engine",
           "skill": "marketing-content-research",
           "status": "live",
-          "hours_per_week": 3,
-          "description": "Research trending AI topics, tools, and developments for YouTube content."
+          "hours_per_week": 0,
+          "description": "Researches trending AI topics, tools, and developments for YouTube content planning."
         },
         {
-          "name": "LinkedIn post drafter",
+          "name": "LinkedIn post generator",
           "skill": "marketing-linkedin-content",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Repurpose YouTube and short-form social into LinkedIn posts."
+          "hours_per_week": 0,
+          "description": "Repurposes YouTube and short-form content into LinkedIn posts."
         }
       ]
     },
@@ -107,7 +107,7 @@
       "name": "Product",
       "automations_live": 0,
       "tasks_automated": 0,
-      "tasks_total": 8,
+      "tasks_total": 0,
       "hours_saved_per_week": 0,
       "automations": []
     },
@@ -116,22 +116,22 @@
       "name": "Dev",
       "automations_live": 2,
       "tasks_automated": 2,
-      "tasks_total": 10,
-      "hours_saved_per_week": 4,
+      "tasks_total": 5,
+      "hours_saved_per_week": 0,
       "automations": [
         {
-          "name": "n8n workflow builder",
+          "name": "n8n workflow assistant",
           "skill": "dev-n8n-workflow",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Builds, debugs, and applies best practices to n8n workflows."
+          "hours_per_week": 0,
+          "description": "Builds, debugs, and reviews n8n workflows against Minimise best practices."
         },
         {
           "name": "Voice AI intel monitor",
           "skill": "dev-voice-ai-intel",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Monitors voice AI platforms and industry developments."
+          "hours_per_week": 0,
+          "description": "Monitors voice AI technology, platforms, and industry developments on demand."
         }
       ]
     },
@@ -140,15 +140,15 @@
       "name": "Finance",
       "automations_live": 1,
       "tasks_automated": 1,
-      "tasks_total": 6,
-      "hours_saved_per_week": 2,
+      "tasks_total": 4,
+      "hours_saved_per_week": 0,
       "automations": [
         {
-          "name": "Contract generator",
+          "name": "Service agreement generator",
           "skill": "finance-contract-gen",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Generates a filled service agreement Google Doc for a new client."
+          "hours_per_week": 0,
+          "description": "Fills the Minimise service agreement template into a client-ready Google Doc."
         }
       ]
     },
@@ -157,15 +157,15 @@
       "name": "Relationships",
       "automations_live": 1,
       "tasks_automated": 1,
-      "tasks_total": 8,
-      "hours_saved_per_week": 4,
+      "tasks_total": 6,
+      "hours_saved_per_week": 0,
       "automations": [
         {
-          "name": "Client reporting",
+          "name": "Client performance reporter",
           "skill": "relationships-client-reporting",
           "status": "live",
-          "hours_per_week": 4,
-          "description": "Performance reports from Supabase analytics + draft client update emails."
+          "hours_per_week": 0,
+          "description": "Generates client performance reports from Supabase analytics data."
         }
       ]
     },
@@ -173,90 +173,276 @@
       "slug": "company",
       "name": "Company",
       "automations_live": 6,
-      "tasks_automated": 0,
-      "tasks_total": 12,
-      "hours_saved_per_week": 13,
+      "tasks_automated": 6,
+      "tasks_total": 7,
+      "hours_saved_per_week": 0,
       "automations": [
         {
           "name": "Daily ClickUp queue",
           "skill": "clickup-daily",
           "status": "live",
-          "hours_per_week": 3,
-          "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline."
+          "hours_per_week": 0,
+          "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline parents."
         },
         {
           "name": "Single-email drafter",
           "skill": "email-draft",
           "status": "live",
-          "hours_per_week": 4,
-          "description": "Drafts a single Gmail email in the sender's voice with the correct footer."
+          "hours_per_week": 0,
+          "description": "Drafts a single Gmail in the sender's voice with the correct Minimise footer."
+        },
+        {
+          "name": "Excalidraw diagrammer",
+          "skill": "excalidraw-diagram",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Generates editable Excalidraw diagrams from a description."
+        },
+        {
+          "name": "Multi-step build planner",
+          "skill": "explore",
+          "status": "live",
+          "hours_per_week": 0,
+          "description": "Plans non-trivial builds (skills, automations, restructures) and dispatches parallel execution."
         },
         {
           "name": "Skill builder",
           "skill": "skill-builder",
           "status": "live",
-          "hours_per_week": 2,
-          "description": "Creates, optimises, and audits skills following Claude Code best practices."
+          "hours_per_week": 0,
+          "description": "Guides creation, optimisation, and audit of Claude Code skills."
         },
         {
-          "name": "Excalidraw diagram maker",
-          "skill": "excalidraw-diagram",
+          "name": "Dashboard sync",
+          "skill": "dashboard-sync",
           "status": "live",
-          "hours_per_week": 1,
-          "description": "Generates editable Excalidraw diagrams from a brief."
-        },
-        {
-          "name": "Codebase explorer",
-          "skill": "explore",
-          "status": "live",
-          "hours_per_week": 2,
-          "description": "Plans new skills, automations, and restructures before coding."
-        },
-        {
-          "name": "Settings configurator",
-          "skill": "update-config",
-          "status": "live",
-          "hours_per_week": 1,
-          "description": "Configures the Claude Code harness via settings.json + hooks."
+          "hours_per_week": 0,
+          "description": "Regenerates dashboard.json + tasks.json and pushes them to the public AIOS dashboard repo."
         }
       ]
     }
   ],
   "coming_next": [
     {
-      "name": "Dashboard sync skill",
-      "department": "company",
-      "leverage": "M",
-      "status": "building"
+      "name": "Daily brief \u2014 auto-generate every morning, post to Slack",
+      "department": "cross-cutting",
+      "leverage": "S",
+      "status": "backlog"
     },
     {
-      "name": "Daily brief auto-post to Slack",
+      "name": "Schedule `clickup-daily` to run automatically at 7:15 AM",
+      "department": "cross-cutting",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Schedule `sales-outreach-run` daily",
+      "department": "cross-cutting",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Wispr archive \u2014 save raw drops before processing",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Drift audit \u2014 flag stale `data/README.md`, loose dept files",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Outreach reply triage \u2014 auto-draft replies to inbound replies on outreach threads",
       "department": "sales",
       "leverage": "S",
       "status": "backlog"
     },
     {
-      "name": "Inbound lead intake automation",
+      "name": "Pipeline staleness sweep as standalone",
       "department": "sales",
-      "leverage": "L",
-      "status": "spec'd"
-    },
-    {
-      "name": "Wispr drop router",
-      "department": "company",
       "leverage": "M",
       "status": "backlog"
     },
     {
-      "name": "YouTube post-production helper",
+      "name": "Auto-update ClickUp Pipeline from sales call transcripts",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-research a prospect before a discovery call (sub-agent run)",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Weekly outreach performance report (reply rate by vertical, by cadence step)",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-transcript pipeline \u2014 Drive watcher kicks off `process-call` when a new Meet/Gemini transcript lands",
+      "department": "sales",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Wispr-drop processing skill for non-outreach phone calls (clients, partners, in-pipeline prospects)",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Lead-to-pipeline skill \u2014 when a scraped lead replies with interest, move them into ClickUp Pipeline",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Follow-up reminder for stale outreach leads (no contact > N days)",
+      "department": "sales",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Schedule `dev-voice-ai-intel` weekly",
       "department": "marketing",
       "leverage": "M",
       "status": "backlog"
     },
     {
-      "name": "Stripe → finance dashboard sync",
+      "name": "Schedule `marketing-content-research` weekly",
+      "department": "marketing",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-publish LinkedIn posts on a cadence",
+      "department": "marketing",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "YouTube video description / thumbnail generation from script",
+      "department": "marketing",
+      "leverage": "L",
+      "status": "backlog"
+    },
+    {
+      "name": "Repurpose podcast / long-form to short-form (Shorts, Reels)",
+      "department": "marketing",
+      "leverage": "L",
+      "status": "backlog"
+    },
+    {
+      "name": "Weekly client performance reports auto-sent",
+      "department": "relationships",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Client check-in scheduling \u2014 proactive Calendar suggestions every N weeks",
+      "department": "relationships",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Partner check-in cadence reminders (Leighton, Ladder Co)",
+      "department": "relationships",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-flag dormant clients (no contact >60 days)",
+      "department": "relationships",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Client onboarding automation \u2014 after a lead converts in Pipeline, spin up ClickUp project from template, send welcome email, notify Ziv",
+      "department": "relationships",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "MRR tracking dashboard / weekly snapshot",
       "department": "finance",
       "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Invoice follow-up \u2014 auto-chase overdue invoices",
+      "department": "finance",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Monthly P&L summary",
+      "department": "finance",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Per-client system health monitoring (response time, conversion)",
+      "department": "dev",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-detect when a deployed Speed-to-Lead system breaks",
+      "department": "dev",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Weekly product metrics roll-up",
+      "department": "dev",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Email triage \u2014 auto-label and prioritize incoming Gmail",
+      "department": "cross-cutting",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Calendar prep \u2014 daily morning summary of today's meetings with prep notes",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Auto-update ClickUp Pipeline from any voice/text mention",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Internal-meeting skill \u2014 process internal team meetings + sales roleplays. Routes to `~/Desktop/minimise-intel/general/internal-meetings/` + `~/Desktop/minimise-intel/sales/roleplay-calls/`",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Smart email drafting \u2014 partially live in `email-draft` (already pulls per-person writing style). Track adapt-by-context refinements (cold vs client update vs follow-up)",
+      "department": "cross-cutting",
+      "leverage": "L",
+      "status": "backlog"
+    },
+    {
+      "name": "Post-task notification \u2014 Telegram/SMS summary after Claude completes an automated task",
+      "department": "cross-cutting",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Weekly pulse check \u2014 Friday roll-up across pipeline, client progress, goals; flag anything off track",
+      "department": "cross-cutting",
+      "leverage": "M",
       "status": "backlog"
     }
   ]

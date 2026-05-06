@@ -1,6 +1,6 @@
 {
   "$schema_version": "1",
-  "generated_at": "2026-05-07T10:14:00Z",
+  "generated_at": "2026-05-06T21:08:10Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -9,161 +9,355 @@
     "background_color": "#ffffff"
   },
   "stats": {
-    "tasks_automated": 12,
-    "tasks_total": 80,
-    "hours_saved_per_week": 47
+    "tasks_automated": 21,
+    "tasks_total": 58,
+    "hours_saved_per_week": 0
   },
   "departments": [
     {
       "slug": "sales",
       "name": "Sales",
-      "tasks_automated": 6,
-      "tasks_total": 18,
+      "tasks_automated": 9,
+      "tasks_total": 19,
       "tasks": [
-        { "name": "Draft daily outreach follow-up emails", "hours_per_week": 5, "automated_by": "sales-outreach-run" },
-        { "name": "Generate proposal docs after a discovery call", "hours_per_week": 2, "automated_by": "sales-proposal-gen" },
-        { "name": "Generate overview leave-behind deck", "hours_per_week": 3, "automated_by": "sales-overview-gen" },
-        { "name": "Process virtual sales calls + draft follow-up", "hours_per_week": 2, "automated_by": "process-call" },
-        { "name": "Research competitors before a pitch", "hours_per_week": 2, "automated_by": "sales-competitor-analysis" },
-        { "name": "Scrape new leads from Google Maps + Apollo", "hours_per_week": 4, "automated_by": "sales-outreach-scrape" },
-        { "name": "Book discovery calls from inbound enquiries", "hours_per_week": 2, "automated_by": null },
-        { "name": "Chase signed contracts back", "hours_per_week": 1, "automated_by": null },
-        { "name": "Maintain sales pipeline in ClickUp", "hours_per_week": 2, "automated_by": null },
-        { "name": "Manually log outbound calls to ClickUp", "hours_per_week": 1, "automated_by": null },
-        { "name": "Move stale leads through the cadence", "hours_per_week": 1, "automated_by": null },
-        { "name": "Pre-call research on each prospect", "hours_per_week": 2, "automated_by": null },
-        { "name": "Send manual breakup emails", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Triage Apollo replies", "hours_per_week": 1, "automated_by": null },
-        { "name": "Update ICP and verticals doc", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Verify lead phone numbers before calling", "hours_per_week": 1, "automated_by": null },
-        { "name": "Write cold email cadence variants", "hours_per_week": 1, "automated_by": null },
-        { "name": "Write referral asks", "hours_per_week": 0.5, "automated_by": null }
-      ]
-    },
-    {
-      "slug": "consulting",
-      "name": "Consulting",
-      "tasks_automated": 0,
-      "tasks_total": 6,
-      "tasks": [
-        { "name": "Build client AIOS scaffolds", "hours_per_week": 4, "automated_by": null },
-        { "name": "Document Claude Code consulting offerings", "hours_per_week": 1, "automated_by": null },
-        { "name": "Prep consulting call agendas", "hours_per_week": 1, "automated_by": null },
-        { "name": "Run weekly consulting check-ins", "hours_per_week": 2, "automated_by": null },
-        { "name": "Send consulting deliverables", "hours_per_week": 1, "automated_by": null },
-        { "name": "Track consulting hours per client", "hours_per_week": 0.5, "automated_by": null }
+        {
+          "name": "Advance and halt outreach cadences",
+          "hours_per_week": 0,
+          "automated_by": "sales-outreach-run"
+        },
+        {
+          "name": "Build a branded proposal with ROI numbers",
+          "hours_per_week": 0,
+          "automated_by": "sales-proposal-gen"
+        },
+        {
+          "name": "Draft daily outreach follow-up emails",
+          "hours_per_week": 0,
+          "automated_by": "sales-outreach-run"
+        },
+        {
+          "name": "Generate a discovery-call overview deck",
+          "hours_per_week": 0,
+          "automated_by": "sales-overview-gen"
+        },
+        {
+          "name": "Log outreach phone calls into the sheet",
+          "hours_per_week": 0,
+          "automated_by": "sales-outreach-run"
+        },
+        {
+          "name": "Process a virtual sales call transcript",
+          "hours_per_week": 0,
+          "automated_by": "process-call"
+        },
+        {
+          "name": "Research a competitor and produce a strategy report",
+          "hours_per_week": 0,
+          "automated_by": "sales-competitor-analysis"
+        },
+        {
+          "name": "Scrape new leads from Google Maps and Apollo",
+          "hours_per_week": 0,
+          "automated_by": "sales-outreach-scrape"
+        },
+        {
+          "name": "Update ClickUp Pipeline after a sales call",
+          "hours_per_week": 0,
+          "automated_by": "process-call"
+        },
+        {
+          "name": "Auto-draft replies to inbound outreach replies",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Auto-research a prospect before a discovery call",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Auto-transcript pipeline (Drive watcher kicks off process-call)",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Auto-update ClickUp Pipeline from phone-call recaps",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Generate weekly outreach performance report by vertical",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Move warm-reply scraped leads into ClickUp Pipeline",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Nudge owner on stale outreach leads after N days",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Process Wispr drops for non-outreach phone calls",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Schedule sales-outreach-run daily",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Standalone pipeline staleness sweep with Slack ping",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "marketing",
       "name": "Marketing",
       "tasks_automated": 2,
-      "tasks_total": 12,
+      "tasks_total": 7,
       "tasks": [
-        { "name": "Draft LinkedIn posts from existing content", "hours_per_week": 2, "automated_by": "marketing-linkedin-content" },
-        { "name": "Research weekly AI content angles", "hours_per_week": 3, "automated_by": "marketing-content-research" },
-        { "name": "Cut Instagram reels from YouTube", "hours_per_week": 2, "automated_by": null },
-        { "name": "Edit weekly YouTube video", "hours_per_week": 6, "automated_by": null },
-        { "name": "Generate YouTube thumbnails", "hours_per_week": 1, "automated_by": null },
-        { "name": "Maintain content calendar", "hours_per_week": 1, "automated_by": null },
-        { "name": "Plan YouTube video shot list", "hours_per_week": 2, "automated_by": null },
-        { "name": "Reply to LinkedIn comments", "hours_per_week": 1, "automated_by": null },
-        { "name": "Reply to YouTube comments", "hours_per_week": 1, "automated_by": null },
-        { "name": "Research guest interview prep", "hours_per_week": 1, "automated_by": null },
-        { "name": "Update minimise.co.nz copy", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Write weekly newsletter", "hours_per_week": 2, "automated_by": null }
-      ]
-    },
-    {
-      "slug": "product",
-      "name": "Product",
-      "tasks_automated": 0,
-      "tasks_total": 8,
-      "tasks": [
-        { "name": "Build new Speed-to-Lead variants", "hours_per_week": 3, "automated_by": null },
-        { "name": "Iterate cadence engine prompts", "hours_per_week": 2, "automated_by": null },
-        { "name": "Maintain product changelog", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Plan Lead Reactivation feature roadmap", "hours_per_week": 1, "automated_by": null },
-        { "name": "QA Speed-to-Lead deployments", "hours_per_week": 2, "automated_by": null },
-        { "name": "Test new voice AI providers", "hours_per_week": 2, "automated_by": null },
-        { "name": "Update product positioning doc", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Write new product onboarding scripts", "hours_per_week": 1, "automated_by": null }
+        {
+          "name": "Repurpose long-form content into LinkedIn posts",
+          "hours_per_week": 0,
+          "automated_by": "marketing-linkedin-content"
+        },
+        {
+          "name": "Research trending AI topics for YouTube content",
+          "hours_per_week": 0,
+          "automated_by": "marketing-content-research"
+        },
+        {
+          "name": "Auto-publish LinkedIn posts on a cadence",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Generate YouTube descriptions and thumbnails from script",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Repurpose long-form into Shorts and Reels",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Schedule content research weekly",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Schedule voice AI intel weekly",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "dev",
       "name": "Dev",
       "tasks_automated": 2,
-      "tasks_total": 10,
+      "tasks_total": 5,
       "tasks": [
-        { "name": "Build and debug n8n workflows", "hours_per_week": 2, "automated_by": "dev-n8n-workflow" },
-        { "name": "Monitor voice AI platform releases", "hours_per_week": 2, "automated_by": "dev-voice-ai-intel" },
-        { "name": "Deploy Supabase schema changes", "hours_per_week": 1, "automated_by": null },
-        { "name": "Investigate production incidents", "hours_per_week": 2, "automated_by": null },
-        { "name": "Maintain integration credentials", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Pair on consulting client repos", "hours_per_week": 3, "automated_by": null },
-        { "name": "Refactor cadence engine code", "hours_per_week": 2, "automated_by": null },
-        { "name": "Review Claude Code skill PRs", "hours_per_week": 1, "automated_by": null },
-        { "name": "Review pull requests", "hours_per_week": 1, "automated_by": null },
-        { "name": "Set up new client deployments", "hours_per_week": 2, "automated_by": null }
+        {
+          "name": "Build, debug, or review an n8n workflow",
+          "hours_per_week": 0,
+          "automated_by": "dev-n8n-workflow"
+        },
+        {
+          "name": "Check the latest voice AI tech and platform news",
+          "hours_per_week": 0,
+          "automated_by": "dev-voice-ai-intel"
+        },
+        {
+          "name": "Detect when a deployed Speed-to-Lead system breaks",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Per-client system health monitoring (response time, conversion)",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Weekly product metrics roll-up",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "finance",
       "name": "Finance",
       "tasks_automated": 1,
-      "tasks_total": 6,
+      "tasks_total": 4,
       "tasks": [
-        { "name": "Generate client service agreements", "hours_per_week": 2, "automated_by": "finance-contract-gen" },
-        { "name": "Chase overdue invoices", "hours_per_week": 1, "automated_by": null },
-        { "name": "Issue monthly invoices", "hours_per_week": 1, "automated_by": null },
-        { "name": "Reconcile Stripe payouts", "hours_per_week": 1, "automated_by": null },
-        { "name": "Run weekly cash-flow check", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Update unit economics tracker", "hours_per_week": 1, "automated_by": null }
+        {
+          "name": "Generate a filled service agreement Google Doc",
+          "hours_per_week": 0,
+          "automated_by": "finance-contract-gen"
+        },
+        {
+          "name": "Chase overdue invoices automatically",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Roll up monthly P&L summary",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Track MRR with a weekly snapshot",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "relationships",
       "name": "Relationships",
       "tasks_automated": 1,
-      "tasks_total": 8,
+      "tasks_total": 6,
       "tasks": [
-        { "name": "Generate monthly client performance reports", "hours_per_week": 4, "automated_by": "relationships-client-reporting" },
-        { "name": "Birthday + milestone touchpoints", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Check in with dormant clients", "hours_per_week": 1, "automated_by": null },
-        { "name": "Manage partner referral pipeline", "hours_per_week": 1, "automated_by": null },
-        { "name": "Renewal conversations", "hours_per_week": 1, "automated_by": null },
-        { "name": "Reply to client Slack threads", "hours_per_week": 2, "automated_by": null },
-        { "name": "Send weekly client digest emails", "hours_per_week": 1, "automated_by": null },
-        { "name": "Track NPS / satisfaction signals", "hours_per_week": 0.5, "automated_by": null }
+        {
+          "name": "Generate a client performance report",
+          "hours_per_week": 0,
+          "automated_by": "relationships-client-reporting"
+        },
+        {
+          "name": "Auto-flag dormant clients with no contact for 60 days",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Auto-send weekly client performance reports",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Onboard a new client (ClickUp project, welcome email, Ziv handoff)",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Remind on partner check-in cadences (Leighton, Ladder Co)",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Suggest proactive client check-in slots in Calendar",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "company",
       "name": "Company",
-      "tasks_automated": 0,
-      "tasks_total": 6,
+      "tasks_automated": 6,
+      "tasks_total": 7,
       "tasks": [
-        { "name": "Run weekly leadership sync", "hours_per_week": 1, "automated_by": null },
-        { "name": "Review OKRs", "hours_per_week": 1, "automated_by": null },
-        { "name": "Maintain team handbook", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Hiring + interviewing", "hours_per_week": 2, "automated_by": null },
-        { "name": "1:1s with team", "hours_per_week": 2, "automated_by": null },
-        { "name": "Vision + strategy reviews", "hours_per_week": 1, "automated_by": null }
+        {
+          "name": "Build, optimise, or audit a Claude Code skill",
+          "hours_per_week": 0,
+          "automated_by": "skill-builder"
+        },
+        {
+          "name": "Draft a single Gmail in someone's voice",
+          "hours_per_week": 0,
+          "automated_by": "email-draft"
+        },
+        {
+          "name": "Draw an editable Excalidraw diagram from a description",
+          "hours_per_week": 0,
+          "automated_by": "excalidraw-diagram"
+        },
+        {
+          "name": "Plan a non-trivial multi-step build before coding",
+          "hours_per_week": 0,
+          "automated_by": "explore"
+        },
+        {
+          "name": "Run today's ClickUp queue across the whole workspace",
+          "hours_per_week": 0,
+          "automated_by": "clickup-daily"
+        },
+        {
+          "name": "Sync the public AIOS dashboard with brain content",
+          "hours_per_week": 0,
+          "automated_by": "dashboard-sync"
+        },
+        {
+          "name": "Schedule clickup-daily to run automatically at 7:15 AM",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     },
     {
       "slug": "cross-cutting",
       "name": "Cross-cutting",
       "tasks_automated": 0,
-      "tasks_total": 6,
+      "tasks_total": 10,
       "tasks": [
-        { "name": "Triage incoming Gmail", "hours_per_week": 3, "automated_by": null },
-        { "name": "Calendar housekeeping", "hours_per_week": 1, "automated_by": null },
-        { "name": "Daily Wispr drop processing", "hours_per_week": 1, "automated_by": null },
-        { "name": "Doc tidy + filing", "hours_per_week": 0.5, "automated_by": null },
-        { "name": "Slack triage across channels", "hours_per_week": 2, "automated_by": null },
-        { "name": "Weekly review", "hours_per_week": 1, "automated_by": null }
+        {
+          "name": "Archive raw Wispr drops before processing",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Auto-update ClickUp Pipeline from any voice or text mention",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Daily morning summary of today's meetings with prep notes",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Drift audit on stale data/README.md and loose dept files",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Friday weekly pulse roll-up across pipeline, clients, and goals",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Generate a daily brief and post to Slack",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Polish smart email drafting for context-aware tone",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Process internal team meetings and sales roleplays",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Send a Telegram or SMS summary after Claude completes a task",
+          "hours_per_week": 0,
+          "automated_by": null
+        },
+        {
+          "name": "Triage incoming Gmail with auto-labels and priority",
+          "hours_per_week": 0,
+          "automated_by": null
+        }
       ]
     }
   ]
