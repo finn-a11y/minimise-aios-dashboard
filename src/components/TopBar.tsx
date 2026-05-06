@@ -20,6 +20,9 @@ export function TopBar({ logoText }: TopBarProps) {
         <Link href="/" className="hover:text-ink transition-colors">
           Home
         </Link>
+        <Link href="/map" className="hover:text-ink transition-colors">
+          Map
+        </Link>
         <Link href="/tasks" className="hover:text-ink transition-colors">
           Tasks
         </Link>
