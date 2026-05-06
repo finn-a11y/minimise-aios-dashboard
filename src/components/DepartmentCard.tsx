@@ -21,7 +21,7 @@ export function DepartmentCard({
   automations,
 }: DepartmentCardProps) {
   return (
-    <details className="group bg-surface p-8 cursor-pointer">
+    <details className="group bg-surface p-8 cursor-pointer border border-neutral-200 rounded-sm min-h-[220px] hover:border-neutral-400 transition-colors">
       <summary className="list-none flex flex-col gap-4 [&::-webkit-details-marker]:hidden">
         <h3 className="text-2xl font-bold tracking-tight text-ink">{name}</h3>
         <dl className="grid grid-cols-3 gap-4 text-sm">
