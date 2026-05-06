@@ -1,0 +1,263 @@
+{
+  "$schema_version": "1",
+  "generated_at": "2026-05-07T10:14:00Z",
+  "instance": {
+    "name": "Minimise",
+    "owner": "Finn Kilworth",
+    "tagline": "Automating my own business",
+    "logo_text": "Minimise",
+    "primary_color": "#047857",
+    "text_color": "#1c1c1e",
+    "background_color": "#ffffff"
+  },
+  "stats": {
+    "hours_saved_per_week": 47,
+    "automations_live": 18,
+    "tasks_automated": 12,
+    "tasks_total": 80
+  },
+  "departments": [
+    {
+      "slug": "sales",
+      "name": "Sales",
+      "automations_live": 6,
+      "tasks_automated": 6,
+      "tasks_total": 18,
+      "hours_saved_per_week": 19,
+      "automations": [
+        {
+          "name": "Outreach scraping",
+          "skill": "sales-outreach-scrape",
+          "status": "live",
+          "hours_per_week": 4,
+          "description": "Auto-scrapes leads from Google Maps + Apollo, dedups against existing pipeline."
+        },
+        {
+          "name": "Outreach cadence runner",
+          "skill": "sales-outreach-run",
+          "status": "live",
+          "hours_per_week": 6,
+          "description": "Drafts daily follow-ups, advances cadences, logs phone calls."
+        },
+        {
+          "name": "Virtual call processor",
+          "skill": "process-call",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Transcript in, ClickUp updated + send-over assets generated + follow-up email drafted."
+        },
+        {
+          "name": "Proposal generator",
+          "skill": "sales-proposal-gen",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Branded proposals with ROI calcs from intake or call notes."
+        },
+        {
+          "name": "Overview deck generator",
+          "skill": "sales-overview-gen",
+          "status": "live",
+          "hours_per_week": 3,
+          "description": "Branded HTML + PDF leave-behind deck after a discovery call."
+        },
+        {
+          "name": "Competitor analysis",
+          "skill": "sales-competitor-analysis",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Strategic reports on AI follow-up and voice AI competitors."
+        }
+      ]
+    },
+    {
+      "slug": "consulting",
+      "name": "Consulting",
+      "automations_live": 0,
+      "tasks_automated": 0,
+      "tasks_total": 6,
+      "hours_saved_per_week": 0,
+      "automations": []
+    },
+    {
+      "slug": "marketing",
+      "name": "Marketing",
+      "automations_live": 2,
+      "tasks_automated": 2,
+      "tasks_total": 12,
+      "hours_saved_per_week": 5,
+      "automations": [
+        {
+          "name": "Content research",
+          "skill": "marketing-content-research",
+          "status": "live",
+          "hours_per_week": 3,
+          "description": "Research trending AI topics, tools, and developments for YouTube content."
+        },
+        {
+          "name": "LinkedIn post drafter",
+          "skill": "marketing-linkedin-content",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Repurpose YouTube and short-form social into LinkedIn posts."
+        }
+      ]
+    },
+    {
+      "slug": "product",
+      "name": "Product",
+      "automations_live": 0,
+      "tasks_automated": 0,
+      "tasks_total": 8,
+      "hours_saved_per_week": 0,
+      "automations": []
+    },
+    {
+      "slug": "dev",
+      "name": "Dev",
+      "automations_live": 2,
+      "tasks_automated": 2,
+      "tasks_total": 10,
+      "hours_saved_per_week": 4,
+      "automations": [
+        {
+          "name": "n8n workflow builder",
+          "skill": "dev-n8n-workflow",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Builds, debugs, and applies best practices to n8n workflows."
+        },
+        {
+          "name": "Voice AI intel monitor",
+          "skill": "dev-voice-ai-intel",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Monitors voice AI platforms and industry developments."
+        }
+      ]
+    },
+    {
+      "slug": "finance",
+      "name": "Finance",
+      "automations_live": 1,
+      "tasks_automated": 1,
+      "tasks_total": 6,
+      "hours_saved_per_week": 2,
+      "automations": [
+        {
+          "name": "Contract generator",
+          "skill": "finance-contract-gen",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Generates a filled service agreement Google Doc for a new client."
+        }
+      ]
+    },
+    {
+      "slug": "relationships",
+      "name": "Relationships",
+      "automations_live": 1,
+      "tasks_automated": 1,
+      "tasks_total": 8,
+      "hours_saved_per_week": 4,
+      "automations": [
+        {
+          "name": "Client reporting",
+          "skill": "relationships-client-reporting",
+          "status": "live",
+          "hours_per_week": 4,
+          "description": "Performance reports from Supabase analytics + draft client update emails."
+        }
+      ]
+    },
+    {
+      "slug": "company",
+      "name": "Company",
+      "automations_live": 6,
+      "tasks_automated": 0,
+      "tasks_total": 12,
+      "hours_saved_per_week": 13,
+      "automations": [
+        {
+          "name": "Daily ClickUp queue",
+          "skill": "clickup-daily",
+          "status": "live",
+          "hours_per_week": 3,
+          "description": "Pulls today's tasks across the workspace, drafts comms-shaped subtasks, flags stale pipeline."
+        },
+        {
+          "name": "Single-email drafter",
+          "skill": "email-draft",
+          "status": "live",
+          "hours_per_week": 4,
+          "description": "Drafts a single Gmail email in the sender's voice with the correct footer."
+        },
+        {
+          "name": "Skill builder",
+          "skill": "skill-builder",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Creates, optimises, and audits skills following Claude Code best practices."
+        },
+        {
+          "name": "Excalidraw diagram maker",
+          "skill": "excalidraw-diagram",
+          "status": "live",
+          "hours_per_week": 1,
+          "description": "Generates editable Excalidraw diagrams from a brief."
+        },
+        {
+          "name": "Codebase explorer",
+          "skill": "explore",
+          "status": "live",
+          "hours_per_week": 2,
+          "description": "Plans new skills, automations, and restructures before coding."
+        },
+        {
+          "name": "Settings configurator",
+          "skill": "update-config",
+          "status": "live",
+          "hours_per_week": 1,
+          "description": "Configures the Claude Code harness via settings.json + hooks."
+        }
+      ]
+    }
+  ],
+  "coming_next": [
+    {
+      "name": "Dashboard sync skill",
+      "department": "company",
+      "leverage": "M",
+      "status": "building"
+    },
+    {
+      "name": "Daily brief auto-post to Slack",
+      "department": "sales",
+      "leverage": "S",
+      "status": "backlog"
+    },
+    {
+      "name": "Inbound lead intake automation",
+      "department": "sales",
+      "leverage": "L",
+      "status": "spec'd"
+    },
+    {
+      "name": "Wispr drop router",
+      "department": "company",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "YouTube post-production helper",
+      "department": "marketing",
+      "leverage": "M",
+      "status": "backlog"
+    },
+    {
+      "name": "Stripe → finance dashboard sync",
+      "department": "finance",
+      "leverage": "S",
+      "status": "backlog"
+    }
+  ]
+}
