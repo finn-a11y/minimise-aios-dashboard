@@ -1,7 +1,6 @@
 import { loadDashboard } from "@/lib/data";
 import { Hero } from "@/components/Hero";
 import { DepartmentGrid } from "@/components/DepartmentGrid";
-import { ComingNext } from "@/components/ComingNext";
 
 export default async function HomePage() {
   const data = await loadDashboard();
@@ -16,7 +15,6 @@ export default async function HomePage() {
         tagline={data.instance.tagline ?? data.instance.name}
       />
       <DepartmentGrid departments={data.departments} />
-      <ComingNext items={data.coming_next} />
     </>
   );
 }

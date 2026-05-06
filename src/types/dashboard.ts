@@ -60,10 +60,16 @@ export interface DashboardData {
   coming_next: ComingNextItem[];
 }
 
+export type TaskStatus = "done" | "queued" | "todo";
+export type TaskImportance = "high" | "medium" | "low";
+
 export interface Task {
   name: string;
   hours_per_week: number;
   automated_by: string | null;
+  importance: TaskImportance;
+  queued: boolean;
+  status: TaskStatus;
 }
 
 export interface TasksDepartment {
@@ -82,6 +88,7 @@ export interface TasksData {
     tasks_automated: number;
     tasks_total: number;
     hours_saved_per_week: number;
+    tasks_by_status: { done: number; queued: number; todo: number };
   };
   departments: TasksDepartment[];
 }
