@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { TasksData, TaskStatus, TaskImportance } from "@/types/dashboard";
+import type { TasksData, TaskStatus, TaskImportance, AutomationMode } from "@/types/dashboard";
 import { PageHeading } from "./PageHeading";
 import { TasksDepartmentSection } from "./TasksDepartmentSection";
 import { formatHours } from "@/lib/format";
@@ -13,6 +13,7 @@ const ALL = "all" as const;
 type DeptFilter = string; // dept slug or "all"
 type ImportanceFilter = TaskImportance | typeof ALL;
 type StatusFilter = TaskStatus | typeof ALL;
+type ModeFilter = AutomationMode | typeof ALL;
 
 function FilterSelect({
   label,
@@ -56,6 +57,7 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
   const [deptFilter, setDeptFilter] = useState<DeptFilter>(ALL);
   const [importanceFilter, setImportanceFilter] = useState<ImportanceFilter>(ALL);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>(ALL);
+  const [modeFilter, setModeFilter] = useState<ModeFilter>(ALL);
 
   // Build dept options from the JSON — preserves rendering order
   const deptOptions = useMemo(
@@ -80,6 +82,13 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
     { value: "queued", label: "Queued" },
   ];
 
+  const modeOptions: { value: ModeFilter; label: string }[] = [
+    { value: ALL, label: "All modes" },
+    { value: "manual", label: "Manual" },
+    { value: "scheduled", label: "Scheduled" },
+    { value: "event", label: "Event" },
+  ];
+
   // Apply filters to departments
   const filteredDepartments = useMemo(() => {
     return departments
@@ -88,12 +97,14 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
         const filteredTasks = d.tasks.filter((t) => {
           if (importanceFilter !== ALL && t.importance !== importanceFilter) return false;
           if (statusFilter !== ALL && t.status !== statusFilter) return false;
+          // mode filter: exclude tasks with no mode (null/undefined) when a specific mode is selected
+          if (modeFilter !== ALL && (t.mode == null || t.mode !== modeFilter)) return false;
           return true;
         });
         return { ...d, tasks: filteredTasks };
       })
       .filter((d) => d.tasks.length > 0);
-  }, [departments, deptFilter, importanceFilter, statusFilter]);
+  }, [departments, deptFilter, importanceFilter, statusFilter, modeFilter]);
 
   // Dynamic stat line based on filtered tasks
   const filteredStats = useMemo(() => {
@@ -117,7 +128,7 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
   }, [filteredDepartments]);
 
   const isFiltered =
-    deptFilter !== ALL || importanceFilter !== ALL || statusFilter !== ALL;
+    deptFilter !== ALL || importanceFilter !== ALL || statusFilter !== ALL || modeFilter !== ALL;
 
   const subtitle = isFiltered
     ? `${filteredStats.automated} of ${filteredStats.total} automated · ${formatHours(filteredStats.hours)} hrs/wk saved (filtered)`
@@ -146,6 +157,12 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
           value={statusFilter}
           options={statusOptions}
           onChange={(v) => setStatusFilter(v as StatusFilter)}
+        />
+        <FilterSelect
+          label="Mode"
+          value={modeFilter}
+          options={modeOptions}
+          onChange={(v) => setModeFilter(v as ModeFilter)}
         />
       </div>
 
