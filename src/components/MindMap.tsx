@@ -117,14 +117,17 @@ function buildGraph(
         links.push({ source: deptId, target: queuedId });
       });
 
-    // Manual task nodes — from tasks.json, automated_by === null, not in coming_next
+    // Manual task nodes — from tasks.json, not automated, not in coming_next
+    // Defensive: handle both old string|null shape and new string[] shape
     const taskDept = tasks.departments.find((td) => td.slug === dept.slug);
     if (taskDept) {
       taskDept.tasks
         .filter(
-          (t) =>
-            t.automated_by === null &&
-            !comingNextNames.has(t.name.toLowerCase().trim())
+          (t) => {
+            const ab = t.automated_by;
+            const isAutomated = Array.isArray(ab) ? ab.length > 0 : ab !== null;
+            return !isAutomated && !comingNextNames.has(t.name.toLowerCase().trim());
+          }
         )
         .forEach((task, ti) => {
           const manualId = `manual-${dept.slug}-${ti}`;

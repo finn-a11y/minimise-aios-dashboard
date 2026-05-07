@@ -67,12 +67,15 @@ export type AutomationMode = "manual" | "scheduled" | "event";
 export interface Task {
   name: string;
   hours_per_week?: number | null; // legacy — kept permissive; v0.2 sync replaces with manual/automated pair
-  automated_by: string | null;
+  // v0.3 schema: automated_by is now a list of skill slugs (empty list = no automation)
+  automated_by: string[];
   importance: TaskImportance;
   queued: boolean;
   status: TaskStatus;
-  // v0.2 fields — may be undefined until L2a schema-sync PR merges
+  // v0.2 fields — primary mode (highest priority across all skills in automated_by)
   mode?: AutomationMode | null;
+  // v0.3 field — one mode string per skill in automated_by
+  modes?: AutomationMode[];
   manual_hours_per_week?: number | null;
   automated_hours_per_week?: number | null;
   hours_saved_per_week?: number | null;

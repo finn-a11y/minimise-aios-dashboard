@@ -2,7 +2,8 @@ import type { AutomationMode, TaskStatus } from "@/types/dashboard";
 
 type TaskRowProps = {
   name: string;
-  automatedBy: string | null;
+  // v0.3 schema: list of skill slugs (empty = no automation)
+  automatedBy: string[];
   status: TaskStatus;
   // v0.2 fields — optional until L2a schema-sync merges
   mode?: AutomationMode | null;
@@ -140,9 +141,9 @@ export function TaskRow({
         )}
       </td>
 
-      {/* Automated by */}
+      {/* Automated by — comma-separated when multiple skills */}
       <td className="py-3 text-sm font-mono text-ink-muted">
-        {automatedBy ?? "—"}
+        {automatedBy.length > 0 ? automatedBy.join(", ") : "—"}
       </td>
     </tr>
   );
