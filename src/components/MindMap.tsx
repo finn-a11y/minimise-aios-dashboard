@@ -147,14 +147,19 @@ function buildGraph(
       const visualStatus: "done" | "queued" | "todo" =
         skillCount > 0 ? "done" : task.queued ? "queued" : "todo";
 
+      // Use short_name for the circle label (legible at small size).
+      // Fall back to a truncated full name if short_name is absent.
+      const circleLabel = task.short_name
+        ? task.short_name
+        : truncate(task.name, 17);
       nodes.push({
         id: taskId,
         kind: "task",
-        label: truncate(task.name, 30),
+        label: circleLabel,
         r,
         deptSlug: dept.slug as DeptSlug,
         sectorAngle,
-        taskName: task.name,
+        taskName: task.name,       // full name — used in tooltip
         taskStatus: visualStatus,
         taskSkillCount: skillCount,
         taskHoursSaved: task.hours_saved_per_week ?? null,

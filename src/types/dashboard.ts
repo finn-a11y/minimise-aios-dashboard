@@ -66,6 +66,7 @@ export type AutomationMode = "manual" | "scheduled" | "event";
 
 export interface Task {
   name: string;
+  short_name?: string; // 1-3 word label for mind map circles (≤ 18 chars); falls back to name if absent
   hours_per_week?: number | null; // legacy — kept permissive; v0.2 sync replaces with manual/automated pair
   // v0.3 schema: automated_by is now a list of skill slugs (empty list = no automation)
   automated_by: string[];
