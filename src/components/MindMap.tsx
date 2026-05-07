@@ -10,38 +10,65 @@ import * as d3Drag from "d3-drag";
 
 // ─── Node types ───────────────────────────────────────────────────────────────
 
-type NodeKind = "centre" | "dept" | "automation" | "queued" | "manual";
+type NodeKind = "centre" | "dept" | "task" | "skill";
 
 interface GraphNode extends d3Force.SimulationNodeDatum {
   id: string;
   kind: NodeKind;
   label: string;
+  r: number; // radius for rendering + collision
   deptSlug?: DeptSlug;
-  // Per-kind extras
-  automationName?: string;
-  automationSkill?: string;
-  automationHours?: number;
-  queuedLeverage?: string;
-  manualHours?: number | null;
-  // dept extras
+  sectorAngle?: number;
+  // Task extras
+  taskName?: string;
+  taskStatus?: "done" | "queued" | "todo";
+  taskSkillCount?: number;
+  taskHoursSaved?: number | null;
+  taskQueued?: boolean;
+  // Skill extras
+  skillName?: string;
+  skillMode?: "manual" | "scheduled" | "event" | null;
+  skillDrivesCount?: number;
+  // Dept extras
   deptLive?: number;
   deptTotal?: number;
-  // sector angle for forceX/Y anchoring
-  sectorAngle?: number;
 }
 
 interface GraphLink extends d3Force.SimulationLinkDatum<GraphNode> {
   source: string | GraphNode;
   target: string | GraphNode;
+  kind: "centre-dept" | "dept-task" | "task-skill";
 }
 
 // ─── Colour helpers ───────────────────────────────────────────────────────────
 
-const COLOURS = {
-  automation: { fill: "#10b981", stroke: "#047857" },   // emerald-500
-  queued:     { fill: "#fbbf24", stroke: "#d97706" },   // amber-300 / amber-600
-  manual:     { fill: "#d1d5db", stroke: "#9ca3af" },   // neutral-300 / neutral-400
+const TASK_COLOURS = {
+  done:   { fill: "#10b981", stroke: "#047857" },  // emerald — has 1+ skills
+  queued: { fill: "#fbbf24", stroke: "#d97706" },  // amber   — queued, no skills yet
+  todo:   { fill: "#d1d5db", stroke: "#9ca3af" },  // neutral — not started
 };
+
+const SKILL_COLOURS: Record<string, { fill: string; stroke: string }> = {
+  event:     { fill: "#10b981", stroke: "#047857" },  // emerald
+  scheduled: { fill: "#fbbf24", stroke: "#d97706" },  // amber
+  manual:    { fill: "#9ca3af", stroke: "#6b7280" },  // neutral
+};
+
+function taskColour(node: GraphNode) {
+  if (node.taskSkillCount && node.taskSkillCount > 0) return TASK_COLOURS.done;
+  if (node.taskQueued) return TASK_COLOURS.queued;
+  return TASK_COLOURS.todo;
+}
+
+function skillColour(mode: string | null | undefined) {
+  if (!mode) return SKILL_COLOURS.manual;
+  return SKILL_COLOURS[mode] ?? SKILL_COLOURS.manual;
+}
+
+function taskRadius(skillCount: number): number {
+  const r = 12 + skillCount * 6;
+  return Math.min(r, 36);
+}
 
 function truncate(s: string, max: number): string {
   return s.length > max ? s.slice(0, max - 1) + "…" : s;
@@ -56,93 +83,103 @@ function buildGraph(
   const nodes: GraphNode[] = [];
   const links: GraphLink[] = [];
 
-  // Centre
-  nodes.push({ id: "centre", kind: "centre", label: dashboard.instance.name });
+  // Centre node
+  nodes.push({
+    id: "centre",
+    kind: "centre",
+    label: dashboard.instance.name,
+    r: 70,
+  });
 
-  const depts = dashboard.departments;
+  const depts = tasks.departments;
   const deptCount = depts.length;
 
-  // Build a set of coming_next names (lowercased) for dedup
-  const comingNextNames = new Set(
-    dashboard.coming_next.map((c) => c.name.toLowerCase().trim())
-  );
+  // Collect all skill slugs across every task, building a map:
+  // skillSlug -> { mode: ..., taskIds: [...] }
+  const skillMap = new Map<string, { mode: string | null; taskIds: string[] }>();
 
+  // Pre-pass: walk all tasks to collect skill data
+  depts.forEach((dept) => {
+    dept.tasks.forEach((task, ti) => {
+      const taskId = `task-${dept.slug}-${ti}`;
+      (task.automated_by ?? []).forEach((slug, si) => {
+        const mode = (task.modes && task.modes[si]) ?? task.mode ?? null;
+        if (!skillMap.has(slug)) {
+          skillMap.set(slug, { mode, taskIds: [] });
+        }
+        skillMap.get(slug)!.taskIds.push(taskId);
+        // If we see multiple modes, prefer event > scheduled > manual
+        const existing = skillMap.get(slug)!.mode;
+        if (mode === "event") skillMap.get(slug)!.mode = "event";
+        else if (mode === "scheduled" && existing !== "event") skillMap.get(slug)!.mode = "scheduled";
+      });
+    });
+  });
+
+  // Build dept + task nodes
   depts.forEach((dept, di) => {
-    // Evenly space departments in a circle; start from top (−90°)
     const sectorAngle = -90 + di * (360 / deptCount);
     const deptId = `dept-${dept.slug}`;
 
+    // Dept node — match data from dashboard if available, else fall back to tasks
+    const dashDept = dashboard.departments.find((d) => d.slug === dept.slug);
     nodes.push({
       id: deptId,
       kind: "dept",
       label: dept.name,
+      r: 50,
       deptSlug: dept.slug as DeptSlug,
-      deptLive: dept.automations_live,
+      deptLive: dashDept?.automations_live ?? dept.tasks_automated,
       deptTotal: dept.tasks_total,
       sectorAngle,
     });
+    links.push({ source: "centre", target: deptId, kind: "centre-dept" });
 
-    links.push({ source: "centre", target: deptId });
+    dept.tasks.forEach((task, ti) => {
+      const taskId = `task-${dept.slug}-${ti}`;
+      const skillCount = (task.automated_by ?? []).length;
+      const r = taskRadius(skillCount);
 
-    // Live automation nodes
-    dept.automations.forEach((auto) => {
-      const autoId = `auto-${dept.slug}-${auto.skill}`;
+      // Determine visual status:
+      // - "done" if it has skills automating it (regardless of task.status)
+      // - "queued" if task.queued is true and no skills yet
+      // - "todo" otherwise
+      const visualStatus: "done" | "queued" | "todo" =
+        skillCount > 0 ? "done" : task.queued ? "queued" : "todo";
+
       nodes.push({
-        id: autoId,
-        kind: "automation",
-        label: truncate(auto.name, 22),
+        id: taskId,
+        kind: "task",
+        label: truncate(task.name, 30),
+        r,
         deptSlug: dept.slug as DeptSlug,
-        automationName: auto.name,
-        automationSkill: auto.skill,
-        automationHours: auto.hours_per_week,
         sectorAngle,
+        taskName: task.name,
+        taskStatus: visualStatus,
+        taskSkillCount: skillCount,
+        taskHoursSaved: task.hours_saved_per_week ?? null,
+        taskQueued: task.queued,
       });
-      links.push({ source: deptId, target: autoId });
+      links.push({ source: deptId, target: taskId, kind: "dept-task" });
+    });
+  });
+
+  // Build skill nodes + task→skill edges
+  skillMap.forEach(({ mode, taskIds }, slug) => {
+    const skillId = `skill-${slug}`;
+    nodes.push({
+      id: skillId,
+      kind: "skill",
+      label: truncate(slug.replace(/-/g, " "), 20),
+      r: 6,
+      skillName: slug,
+      skillMode: mode as "manual" | "scheduled" | "event" | null,
+      skillDrivesCount: taskIds.length,
     });
 
-    // Queued (coming_next) nodes for this dept
-    dashboard.coming_next
-      .filter((c) => c.department === dept.slug)
-      .forEach((item, qi) => {
-        const queuedId = `queued-${dept.slug}-${qi}`;
-        nodes.push({
-          id: queuedId,
-          kind: "queued",
-          label: truncate(item.name, 22),
-          deptSlug: dept.slug as DeptSlug,
-          automationName: item.name,
-          queuedLeverage: item.leverage,
-          sectorAngle,
-        });
-        links.push({ source: deptId, target: queuedId });
-      });
-
-    // Manual task nodes — from tasks.json, not automated, not in coming_next
-    // Defensive: handle both old string|null shape and new string[] shape
-    const taskDept = tasks.departments.find((td) => td.slug === dept.slug);
-    if (taskDept) {
-      taskDept.tasks
-        .filter(
-          (t) => {
-            const ab = t.automated_by;
-            const isAutomated = Array.isArray(ab) ? ab.length > 0 : ab !== null;
-            return !isAutomated && !comingNextNames.has(t.name.toLowerCase().trim());
-          }
-        )
-        .forEach((task, ti) => {
-          const manualId = `manual-${dept.slug}-${ti}`;
-          nodes.push({
-            id: manualId,
-            kind: "manual",
-            label: truncate(task.name, 22),
-            deptSlug: dept.slug as DeptSlug,
-            automationName: task.name,
-            manualHours: task.manual_hours_per_week ?? task.hours_per_week,
-            sectorAngle,
-          });
-          links.push({ source: deptId, target: manualId });
-        });
-    }
+    taskIds.forEach((taskId) => {
+      links.push({ source: taskId, target: skillId, kind: "task-skill" });
+    });
   });
 
   return { nodes, links };
@@ -159,7 +196,7 @@ interface TooltipState {
 
 // ─── Mobile fallback ──────────────────────────────────────────────────────────
 
-function MobileFallback({ data }: { data: DashboardData }) {
+function MobileFallback({ data, tasksData }: { data: DashboardData; tasksData: TasksData }) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col items-center pb-4 border-b border-neutral-100">
@@ -174,30 +211,39 @@ function MobileFallback({ data }: { data: DashboardData }) {
           {data.stats.automations_live} automations live
         </p>
       </div>
-      {data.departments.map((dept) => (
+      {tasksData.departments.map((dept) => (
         <div key={dept.slug} className="border border-neutral-100 rounded p-4">
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm font-semibold text-ink">{dept.name}</span>
             <span className="text-xs text-ink-muted">
-              {dept.automations_live} live · {dept.tasks_total} tasks
+              {dept.tasks_automated} automated · {dept.tasks_total} tasks
             </span>
           </div>
-          {dept.automations.length === 0 ? (
-            <p className="text-xs text-ink-muted italic">No automations yet</p>
-          ) : (
-            <ul className="space-y-1.5">
-              {dept.automations.map((auto) => (
-                <li key={auto.skill} className="flex items-center gap-2 text-xs text-ink">
+          <ul className="space-y-1.5">
+            {dept.tasks.map((task) => {
+              const skillCount = (task.automated_by ?? []).length;
+              const colour =
+                skillCount > 0
+                  ? TASK_COLOURS.done.fill
+                  : task.queued
+                  ? TASK_COLOURS.queued.fill
+                  : TASK_COLOURS.todo.fill;
+              return (
+                <li key={task.name} className="flex items-center gap-2 text-xs text-ink">
                   <span
-                    className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0"
-                    style={{ backgroundColor: COLOURS.automation.fill }}
+                    className="inline-block rounded-full flex-shrink-0"
+                    style={{ width: 8, height: 8, backgroundColor: colour }}
                   />
-                  {auto.name}
-                  <span className="text-ink-muted ml-auto">{auto.status}</span>
+                  <span className="truncate">{task.name}</span>
+                  {skillCount > 0 && (
+                    <span className="text-ink-muted ml-auto shrink-0">
+                      {skillCount} skill{skillCount > 1 ? "s" : ""}
+                    </span>
+                  )}
                 </li>
-              ))}
-            </ul>
-          )}
+              );
+            })}
+          </ul>
         </div>
       ))}
     </div>
@@ -218,23 +264,22 @@ export function MindMap({
   const svgRef = useRef<SVGSVGElement>(null);
   const gRef = useRef<SVGGElement>(null);
   const simRef = useRef<d3Force.Simulation<GraphNode, GraphLink> | null>(null);
+  const mousePos = useRef<{ x: number; y: number } | null>(null);
+  const zoomTransformRef = useRef<d3Zoom.ZoomTransform>(d3Zoom.zoomIdentity);
+  const mouseMoveActiveRef = useRef(false);
   const [tooltip, setTooltip] = useState<TooltipState>({
     visible: false,
     x: 0,
     y: 0,
     content: [],
   });
+  const [dims, setDims] = useState({ w: 900, h: 600 });
 
   // Build graph once
   const { nodes: initialNodes, links: initialLinks } = useMemo(
     () => buildGraph(data, tasksData),
     [data, tasksData]
   );
-
-  // Refs for stable closure access
-  const nodesRef = useRef<GraphNode[]>([]);
-  const linksRef = useRef<GraphLink[]>([]);
-  const [dims, setDims] = useState({ w: 900, h: 600 });
 
   // Mobile detection
   useEffect(() => {
@@ -244,10 +289,7 @@ export function MindMap({
     handler(mq);
     mq.addEventListener("change", handler as (e: MediaQueryListEvent) => void);
     return () =>
-      mq.removeEventListener(
-        "change",
-        handler as (e: MediaQueryListEvent) => void
-      );
+      mq.removeEventListener("change", handler as (e: MediaQueryListEvent) => void);
   }, []);
 
   // Resize observer
@@ -268,23 +310,24 @@ export function MindMap({
 
   const buildTooltipContent = useCallback((node: GraphNode): string[] => {
     switch (node.kind) {
-      case "automation": {
-        const parts = [node.automationName ?? node.label];
-        if (node.automationSkill) parts.push(`skill: ${node.automationSkill}`);
-        if (node.automationHours != null)
-          parts.push(`${node.automationHours}h saved/wk`);
-        else parts.push("live");
+      case "task": {
+        const parts: string[] = [node.taskName ?? node.label];
+        if ((node.taskSkillCount ?? 0) > 0) {
+          parts.push(`${node.taskSkillCount} skill${node.taskSkillCount === 1 ? "" : "s"} automating it`);
+          if (node.taskHoursSaved != null)
+            parts.push(`${node.taskHoursSaved}h saved/wk`);
+        } else if (node.taskQueued) {
+          parts.push("queued — no skill yet");
+        } else {
+          parts.push("not yet automated");
+        }
         return parts;
       }
-      case "queued":
-        return [
-          node.automationName ?? node.label,
-          `queued · leverage ${node.queuedLeverage ?? "?"}`,
-        ];
-      case "manual": {
-        const parts = [node.automationName ?? node.label, "manual · not yet automated"];
-        if (node.manualHours != null)
-          parts.push(`~${node.manualHours}h/wk`);
+      case "skill": {
+        const parts: string[] = [node.skillName ?? node.label];
+        if (node.skillMode) parts.push(`mode: ${node.skillMode}`);
+        if (node.skillDrivesCount != null)
+          parts.push(`drives ${node.skillDrivesCount} task${node.skillDrivesCount === 1 ? "" : "s"}`);
         return parts;
       }
       case "dept":
@@ -297,30 +340,51 @@ export function MindMap({
     }
   }, []);
 
-  // D3 setup — runs once on mount (client only)
+  // D3 setup — runs once on mount/resize (client only)
   useEffect(() => {
     if (isMobile || !svgRef.current || !gRef.current) return;
 
     const svg = d3Selection.select(svgRef.current);
     const g = d3Selection.select(gRef.current);
 
-    // Deep-clone nodes so d3 can mutate them
+    // Clear previous render
+    g.selectAll("*").remove();
+
+    // Deep-clone nodes/links so d3 can mutate them
     const nodes: GraphNode[] = initialNodes.map((n) => ({ ...n }));
     const links: GraphLink[] = initialLinks.map((l) => ({
       source: l.source,
       target: l.target,
+      kind: l.kind,
     }));
-    nodesRef.current = nodes;
-    linksRef.current = links;
 
     const { w, h } = dims;
     const cx = w / 2;
     const cy = h / 2;
 
-    // Sector anchoring radius — depts orbit ~200px from centre, children a bit further
-    const SECTOR_R = Math.min(w, h) * 0.28;
-    const CHILD_R = Math.min(w, h) * 0.44;
+    const SECTOR_R = Math.min(w, h) * 0.26;
+    const TASK_R = Math.min(w, h) * 0.42;
 
+    // ─── Mouse force ─────────────────────────────────────────────────────────
+    function mouseForce(alpha: number) {
+      if (!mousePos.current) return;
+      const mp = mousePos.current;
+      nodes.forEach((node) => {
+        const nx = node.x ?? 0;
+        const ny = node.y ?? 0;
+        const dx = nx - mp.x;
+        const dy = ny - mp.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const RADIUS = 160;
+        if (dist > 0 && dist < RADIUS) {
+          const strength = (RADIUS - dist) * 0.04 * alpha;
+          node.vx = (node.vx ?? 0) + (dx / dist) * strength;
+          node.vy = (node.vy ?? 0) + (dy / dist) * strength;
+        }
+      });
+    }
+
+    // ─── Simulation ──────────────────────────────────────────────────────────
     const sim = d3Force
       .forceSimulation<GraphNode>(nodes)
       .force(
@@ -329,27 +393,24 @@ export function MindMap({
           .forceLink<GraphNode, GraphLink>(links)
           .id((d) => d.id)
           .distance((l) => {
-            const s = l.source as GraphNode;
-            const t = l.target as GraphNode;
-            if (s.kind === "centre" || t.kind === "centre") return 160;
-            if (s.kind === "dept" || t.kind === "dept") return 80;
-            return 60;
+            switch (l.kind) {
+              case "centre-dept": return 200;
+              case "dept-task":   return 100;
+              case "task-skill":  return 50;
+              default:            return 80;
+            }
           })
-          .strength(0.6)
+          .strength(0.55)
       )
-      .force("charge", d3Force.forceManyBody().strength(-120))
-      .force("center", d3Force.forceCenter(cx, cy).strength(0.05))
+      .force("charge", d3Force.forceManyBody().strength(-180))
+      .force("center", d3Force.forceCenter(cx, cy).strength(0.04))
       .force(
         "collide",
-        d3Force.forceCollide<GraphNode>().radius((d) => {
-          if (d.kind === "centre") return 80;
-          if (d.kind === "dept") return 64;
-          if (d.kind === "automation") return 22;
-          if (d.kind === "queued") return 18;
-          return 16;
-        })
+        d3Force.forceCollide<GraphNode>()
+          .radius((d) => d.r + 4)
+          .strength(0.7)
       )
-      // Pull dept nodes toward their sector positions
+      // Sector anchoring: dept nodes orbit at SECTOR_R, tasks at TASK_R (weaker)
       .force(
         "sectorX",
         d3Force
@@ -359,16 +420,17 @@ export function MindMap({
               const rad = (d.sectorAngle * Math.PI) / 180;
               return cx + SECTOR_R * Math.cos(rad);
             }
-            if (d.sectorAngle != null) {
+            if (d.kind === "task" && d.sectorAngle != null) {
               const rad = (d.sectorAngle * Math.PI) / 180;
-              return cx + CHILD_R * Math.cos(rad);
+              return cx + TASK_R * Math.cos(rad);
             }
             return cx;
           })
           .strength((d) => {
-            if (d.kind === "centre") return 0.5;
-            if (d.kind === "dept") return 0.25;
-            return 0.06;
+            if (d.kind === "centre") return 0.6;
+            if (d.kind === "dept") return 0.3;
+            if (d.kind === "task") return 0.05;
+            return 0;
           })
       )
       .force(
@@ -380,34 +442,48 @@ export function MindMap({
               const rad = (d.sectorAngle * Math.PI) / 180;
               return cy + SECTOR_R * Math.sin(rad);
             }
-            if (d.sectorAngle != null) {
+            if (d.kind === "task" && d.sectorAngle != null) {
               const rad = (d.sectorAngle * Math.PI) / 180;
-              return cy + CHILD_R * Math.sin(rad);
+              return cy + TASK_R * Math.sin(rad);
             }
             return cy;
           })
           .strength((d) => {
-            if (d.kind === "centre") return 0.5;
-            if (d.kind === "dept") return 0.25;
-            return 0.06;
+            if (d.kind === "centre") return 0.6;
+            if (d.kind === "dept") return 0.3;
+            if (d.kind === "task") return 0.05;
+            return 0;
           })
       )
-      .alphaDecay(0.025);
+      .force("mouse", mouseForce)
+      .alphaDecay(0.02);
 
     simRef.current = sim;
 
-    // ─── Render links ───────────────────────────────────────────────────────
-
+    // ─── Render links ────────────────────────────────────────────────────────
     const linkSel = g
       .selectAll<SVGLineElement, GraphLink>("line.link")
       .data(links)
       .join("line")
       .attr("class", "link")
-      .attr("stroke", "#e5e7eb")
-      .attr("stroke-width", 1);
+      .attr("stroke", (l) => {
+        switch (l.kind) {
+          case "centre-dept": return "#d1d5db";
+          case "dept-task":   return "#e5e7eb";
+          case "task-skill":  return "#f3f4f6";
+          default:            return "#e5e7eb";
+        }
+      })
+      .attr("stroke-width", (l) => {
+        switch (l.kind) {
+          case "centre-dept": return 1.5;
+          case "dept-task":   return 1;
+          case "task-skill":  return 0.75;
+          default:            return 1;
+        }
+      });
 
-    // ─── Render nodes ───────────────────────────────────────────────────────
-
+    // ─── Render nodes ────────────────────────────────────────────────────────
     const nodeSel = g
       .selectAll<SVGGElement, GraphNode>("g.node")
       .data(nodes, (d) => d.id)
@@ -415,15 +491,13 @@ export function MindMap({
       .attr("class", "node")
       .style("cursor", "grab");
 
-    // Draw per-kind visuals
     nodeSel.each(function (d) {
       const el = d3Selection.select(this);
-      // Clear any previous children (re-render on update)
       el.selectAll("*").remove();
 
       switch (d.kind) {
         case "centre": {
-          const W = 140, H = 60;
+          const W = 140, H = 56;
           el.append("rect")
             .attr("x", -W / 2)
             .attr("y", -H / 2)
@@ -434,13 +508,12 @@ export function MindMap({
             .attr("stroke", "#d1d5db")
             .attr("stroke-width", 1.5);
 
-          // Logo via foreignObject
           const fo = el
             .append("foreignObject")
             .attr("x", -W / 2 + 10)
-            .attr("y", -H / 2 + 10)
+            .attr("y", -H / 2 + 8)
             .attr("width", W - 20)
-            .attr("height", 28);
+            .attr("height", 26);
           const div = fo
             .append("xhtml:div")
             .style("display", "flex")
@@ -450,24 +523,25 @@ export function MindMap({
             .append("xhtml:img")
             .attr("src", "/minimise-logo.png")
             .attr("alt", d.label)
-            .style("height", "22px")
+            .style("height", "20px")
             .style("width", "auto")
             .style("object-fit", "contain");
 
           el.append("text")
-            .attr("y", H / 2 - 10)
+            .attr("y", H / 2 - 8)
             .attr("text-anchor", "middle")
-            .attr("font-size", 8.5)
+            .attr("font-size", 7.5)
             .attr("fill", "#9ca3af")
             .attr("font-family", "var(--font-sans, ui-sans-serif)")
             .attr("font-weight", 500)
-            .attr("letter-spacing", "0.06em")
+            .attr("letter-spacing", "0.07em")
             .style("text-transform", "uppercase")
-            .text(d.label);
+            .text("AIOS");
           break;
         }
+
         case "dept": {
-          const W = 110, H = 40;
+          const W = 100, H = 36;
           el.append("rect")
             .attr("x", -W / 2)
             .attr("y", -H / 2)
@@ -479,72 +553,58 @@ export function MindMap({
             .attr("stroke-width", 1);
 
           el.append("text")
-            .attr("y", -6)
+            .attr("y", -5)
             .attr("text-anchor", "middle")
-            .attr("font-size", 11)
+            .attr("font-size", 10)
             .attr("font-weight", 600)
             .attr("fill", "#1c1c1e")
             .attr("font-family", "var(--font-sans, ui-sans-serif)")
             .text(d.label);
 
           el.append("text")
-            .attr("y", 10)
+            .attr("y", 9)
             .attr("text-anchor", "middle")
-            .attr("font-size", 8.5)
+            .attr("font-size", 7.5)
             .attr("fill", "#9ca3af")
             .attr("font-family", "var(--font-sans, ui-sans-serif)")
-            .text(`${d.deptLive ?? 0} live · ${d.deptTotal ?? 0} total`);
+            .text(`${d.deptLive ?? 0} live · ${d.deptTotal ?? 0} tasks`);
           break;
         }
-        case "automation": {
-          const r = 10;
-          el.append("circle")
-            .attr("r", r)
-            .attr("fill", COLOURS.automation.fill)
-            .attr("stroke", "white")
-            .attr("stroke-width", 2);
 
-          el.append("text")
-            .attr("y", r + 12)
-            .attr("text-anchor", "middle")
-            .attr("font-size", 8.5)
-            .attr("fill", "#374151")
-            .attr("font-family", "var(--font-sans, ui-sans-serif)")
-            .attr("pointer-events", "none")
-            .text(d.label);
-          break;
-        }
-        case "queued": {
-          const r = 8;
+        case "task": {
+          const r = d.r;
+          const colours = taskColour(d);
           el.append("circle")
             .attr("r", r)
-            .attr("fill", COLOURS.queued.fill)
+            .attr("fill", colours.fill)
             .attr("stroke", "white")
             .attr("stroke-width", 2);
 
           el.append("text")
             .attr("y", r + 11)
             .attr("text-anchor", "middle")
-            .attr("font-size", 8)
-            .attr("fill", "#6b7280")
+            .attr("font-size", 9)
+            .attr("fill", "#374151")
             .attr("font-family", "var(--font-sans, ui-sans-serif)")
             .attr("pointer-events", "none")
             .text(d.label);
           break;
         }
-        case "manual": {
-          const r = 6;
+
+        case "skill": {
+          const r = d.r;
+          const colours = skillColour(d.skillMode);
           el.append("circle")
             .attr("r", r)
-            .attr("fill", COLOURS.manual.fill)
+            .attr("fill", colours.fill)
             .attr("stroke", "white")
-            .attr("stroke-width", 2);
+            .attr("stroke-width", 1.5);
 
           el.append("text")
-            .attr("y", r + 10)
+            .attr("y", r + 9)
             .attr("text-anchor", "middle")
-            .attr("font-size", 8)
-            .attr("fill", "#9ca3af")
+            .attr("font-size", 7.5)
+            .attr("fill", "#6b7280")
             .attr("font-family", "var(--font-sans, ui-sans-serif)")
             .attr("pointer-events", "none")
             .text(d.label);
@@ -553,35 +613,32 @@ export function MindMap({
       }
     });
 
-    // ─── Hover tooltip ──────────────────────────────────────────────────────
-
+    // ─── Hover tooltip ───────────────────────────────────────────────────────
     nodeSel
       .on("mouseenter", function (event: MouseEvent, d: GraphNode) {
         const svgRect = svgRef.current?.getBoundingClientRect();
         if (!svgRect) return;
         setTooltip({
           visible: true,
-          x: event.clientX - svgRect.left + 12,
-          y: event.clientY - svgRect.top + 12,
+          x: event.clientX - svgRect.left + 14,
+          y: event.clientY - svgRect.top + 14,
           content: buildTooltipContent(d),
         });
-        d3Selection.select(this).style("cursor", "grab");
       })
       .on("mousemove", function (event: MouseEvent) {
         const svgRect = svgRef.current?.getBoundingClientRect();
         if (!svgRect) return;
         setTooltip((prev) => ({
           ...prev,
-          x: event.clientX - svgRect.left + 12,
-          y: event.clientY - svgRect.top + 12,
+          x: event.clientX - svgRect.left + 14,
+          y: event.clientY - svgRect.top + 14,
         }));
       })
       .on("mouseleave", () => {
         setTooltip((prev) => ({ ...prev, visible: false }));
       });
 
-    // ─── Drag ───────────────────────────────────────────────────────────────
-
+    // ─── Drag ────────────────────────────────────────────────────────────────
     const drag = d3Drag
       .drag<SVGGElement, GraphNode>()
       .on("start", function (event, d) {
@@ -603,21 +660,18 @@ export function MindMap({
 
     nodeSel.call(drag);
 
-    // ─── Zoom / pan ─────────────────────────────────────────────────────────
-
+    // ─── Zoom / pan ──────────────────────────────────────────────────────────
     const zoom = d3Zoom
       .zoom<SVGSVGElement, unknown>()
       .scaleExtent([0.3, 3])
       .on("zoom", (event) => {
+        zoomTransformRef.current = event.transform;
         g.attr("transform", event.transform.toString());
       })
       .filter((event) => {
-        // Disable double-click zoom; allow wheel + drag on svg background
         if (event.type === "dblclick") return false;
-        // Don't pan when the user is dragging a node
         if (event.type === "mousedown") {
           const target = event.target as SVGElement;
-          // If target is inside a .node, let drag handle it
           if (target.closest && target.closest(".node")) return false;
         }
         return true;
@@ -625,8 +679,12 @@ export function MindMap({
 
     svg.call(zoom);
 
-    // ─── Simulation tick ────────────────────────────────────────────────────
+    // ─── Mouse tracking ──────────────────────────────────────────────────────
+    // onMouseMove is handled via React prop on SVG — we update mousePos.current
+    // and bump alphaTarget so the simulation stays warm while moving.
+    // (See onMouseMove on the SVG element below — it calls updateMousePos)
 
+    // ─── Simulation tick ─────────────────────────────────────────────────────
     sim.on("tick", () => {
       linkSel
         .attr("x1", (l) => (l.source as GraphNode).x ?? 0)
@@ -634,10 +692,7 @@ export function MindMap({
         .attr("x2", (l) => (l.target as GraphNode).x ?? 0)
         .attr("y2", (l) => (l.target as GraphNode).y ?? 0);
 
-      nodeSel.attr(
-        "transform",
-        (d) => `translate(${d.x ?? 0},${d.y ?? 0})`
-      );
+      nodeSel.attr("transform", (d) => `translate(${d.x ?? 0},${d.y ?? 0})`);
     });
 
     setReady(true);
@@ -649,34 +704,76 @@ export function MindMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile, dims.w, dims.h]);
 
+  // Handle mouse move on the SVG — convert to graph coords, update force
+  const handleSvgMouseMove = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
+    const svgRect = svgRef.current?.getBoundingClientRect();
+    if (!svgRect) return;
+
+    const t = zoomTransformRef.current;
+    // Invert zoom transform to get graph-space coords
+    const gx = (event.clientX - svgRect.left - t.x) / t.k;
+    const gy = (event.clientY - svgRect.top - t.y) / t.k;
+
+    mousePos.current = { x: gx, y: gy };
+
+    if (!mouseMoveActiveRef.current && simRef.current) {
+      mouseMoveActiveRef.current = true;
+      simRef.current.alphaTarget(0.05).restart();
+    }
+  }, []);
+
+  const handleSvgMouseLeave = useCallback(() => {
+    mousePos.current = null;
+    mouseMoveActiveRef.current = false;
+    if (simRef.current) {
+      simRef.current.alphaTarget(0);
+    }
+    setTooltip((prev) => ({ ...prev, visible: false }));
+  }, []);
+
   if (isMobile) {
-    return <MobileFallback data={data} />;
+    return <MobileFallback data={data} tasksData={tasksData} />;
   }
 
   return (
     <div className="relative w-full" style={{ height: "80vh" }}>
-      {/* Legend — fixed in SVG-relative bottom-left */}
+      {/* Legend — bottom-left, fixed relative to SVG container */}
       <div
-        className="absolute bottom-4 left-4 z-10 bg-white border border-neutral-200 rounded p-2 shadow-sm"
+        className="absolute bottom-4 left-4 z-10 bg-white border border-neutral-200 rounded p-2.5 shadow-sm"
         style={{ pointerEvents: "none" }}
       >
-        <p className="text-[9px] font-medium text-neutral-400 uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] font-medium text-neutral-400 uppercase tracking-widest mb-2">
           Legend
         </p>
+        {/* Task size row */}
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-[9px] text-neutral-500">▣ Task</span>
+          <span className="text-[9px] text-neutral-400">bigger = more automated</span>
+        </div>
+        {/* Skill colour rows */}
         {[
-          { color: COLOURS.automation.fill, label: "Live automation" },
-          { color: COLOURS.queued.fill, label: "Queued / backlog" },
-          { color: COLOURS.manual.fill, label: "Not yet automated" },
+          { color: SKILL_COLOURS.event.fill,     label: "Skill (event)" },
+          { color: SKILL_COLOURS.scheduled.fill, label: "Skill (scheduled)" },
+          { color: SKILL_COLOURS.manual.fill,    label: "Skill (manual)" },
         ].map(({ color, label }) => (
           <div key={label} className="flex items-center gap-1.5 mb-1">
             <span
-              className="inline-block rounded-full"
-              style={{
-                width: 8,
-                height: 8,
-                backgroundColor: color,
-                flexShrink: 0,
-              }}
+              className="inline-block rounded-full flex-shrink-0"
+              style={{ width: 7, height: 7, backgroundColor: color }}
+            />
+            <span className="text-[9px] text-neutral-500">{label}</span>
+          </div>
+        ))}
+        {/* Task status colour rows */}
+        {[
+          { color: TASK_COLOURS.done.fill,   label: "Task — automated" },
+          { color: TASK_COLOURS.queued.fill, label: "Task — queued" },
+          { color: TASK_COLOURS.todo.fill,   label: "Task — todo" },
+        ].map(({ color, label }) => (
+          <div key={label} className="flex items-center gap-1.5 mb-1">
+            <span
+              className="inline-block rounded-full flex-shrink-0"
+              style={{ width: 7, height: 7, backgroundColor: color }}
             />
             <span className="text-[9px] text-neutral-500">{label}</span>
           </div>
@@ -687,7 +784,7 @@ export function MindMap({
       {tooltip.visible && (
         <div
           className="absolute z-20 bg-white border border-neutral-200 rounded shadow-sm p-2 pointer-events-none"
-          style={{ left: tooltip.x, top: tooltip.y, maxWidth: 220 }}
+          style={{ left: tooltip.x, top: tooltip.y, maxWidth: 240 }}
         >
           {tooltip.content.map((line, i) => (
             <p
@@ -704,8 +801,10 @@ export function MindMap({
       <svg
         ref={svgRef}
         className="w-full h-full"
-        aria-label="Minimise automation map — force-directed graph"
-        style={{ opacity: ready ? 1 : 0, transition: "opacity 0.3s" }}
+        aria-label="Minimise AIOS mind map — tasks as primary nodes, sized by automation count"
+        style={{ opacity: ready ? 1 : 0, transition: "opacity 0.4s" }}
+        onMouseMove={handleSvgMouseMove}
+        onMouseLeave={handleSvgMouseLeave}
       >
         <g ref={gRef} />
       </svg>
