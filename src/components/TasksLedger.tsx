@@ -114,7 +114,7 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
     for (const d of filteredDepartments) {
       for (const t of d.tasks) {
         total++;
-        if (t.automated_by !== null) {
+        if (t.automated_by.length > 0) {
           automated++;
           // v0.2: prefer hours_saved_per_week; fall back to legacy hours_per_week
           const saved =
