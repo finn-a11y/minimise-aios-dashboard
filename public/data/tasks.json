@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-07T02:14:15Z",
+  "generated_at": "2026-05-07T02:23:42Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -27,7 +27,7 @@
       "tasks": [
         {
           "name": "Advance and halt outreach cadences",
-          "short_name": "Manage cadences",
+          "short_name": "Run outreach steps",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -78,7 +78,7 @@
         },
         {
           "name": "Generate a discovery-call overview deck",
-          "short_name": "Generate overview",
+          "short_name": "Generate overview deck",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -95,7 +95,7 @@
         },
         {
           "name": "Log outreach phone calls into the sheet",
-          "short_name": "Log calls",
+          "short_name": "Log call notes",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -112,7 +112,7 @@
         },
         {
           "name": "Process a virtual sales call transcript",
-          "short_name": "Process call",
+          "short_name": "Process sales call",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -129,7 +129,7 @@
         },
         {
           "name": "Research a competitor and produce a strategy report",
-          "short_name": "Competitor intel",
+          "short_name": "Research competitors",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -180,7 +180,7 @@
         },
         {
           "name": "Auto-draft replies to inbound outreach replies",
-          "short_name": "Auto-reply inbound",
+          "short_name": "Reply to inbound",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -193,7 +193,7 @@
         },
         {
           "name": "Auto-research a prospect before a discovery call",
-          "short_name": "Prospect research",
+          "short_name": "Research prospects",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -206,7 +206,7 @@
         },
         {
           "name": "Auto-transcript pipeline (Drive watcher kicks off process-call)",
-          "short_name": "Auto-transcript",
+          "short_name": "Auto-transcribe calls",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -219,7 +219,7 @@
         },
         {
           "name": "Auto-update ClickUp Pipeline from phone-call recaps",
-          "short_name": "Update from calls",
+          "short_name": "Sync calls to pipeline",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -232,7 +232,7 @@
         },
         {
           "name": "Generate weekly outreach performance report by vertical",
-          "short_name": "Outreach report",
+          "short_name": "Weekly outreach report",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -245,7 +245,7 @@
         },
         {
           "name": "Move warm-reply scraped leads into ClickUp Pipeline",
-          "short_name": "Promote warm leads",
+          "short_name": "Convert warm leads",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -271,7 +271,7 @@
         },
         {
           "name": "Process Wispr drops for non-outreach phone calls",
-          "short_name": "Process Wispr",
+          "short_name": "Process Wispr drops",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -284,7 +284,7 @@
         },
         {
           "name": "Schedule sales-outreach-run daily",
-          "short_name": "Schedule outreach",
+          "short_name": "Schedule outreach run",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -297,7 +297,7 @@
         },
         {
           "name": "Standalone pipeline staleness sweep with Slack ping",
-          "short_name": "Pipeline staleness",
+          "short_name": "Flag stale leads",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -318,7 +318,7 @@
       "tasks": [
         {
           "name": "Generate a client performance report",
-          "short_name": "Client report",
+          "short_name": "Generate client report",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -335,7 +335,7 @@
         },
         {
           "name": "Auto-flag dormant clients with no contact for 60 days",
-          "short_name": "Flag dormant",
+          "short_name": "Flag dormant clients",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -348,7 +348,7 @@
         },
         {
           "name": "Auto-send weekly client performance reports",
-          "short_name": "Auto send reports",
+          "short_name": "Auto-send reports",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -374,7 +374,7 @@
         },
         {
           "name": "Remind on partner check-in cadences (Leighton, Ladder Co)",
-          "short_name": "Partner reminders",
+          "short_name": "Remind on partners",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -408,7 +408,7 @@
       "tasks": [
         {
           "name": "Build, optimise, or audit a Claude Code skill",
-          "short_name": "Build skill",
+          "short_name": "Build a skill",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -425,7 +425,7 @@
         },
         {
           "name": "Draft a single Gmail in someone's voice",
-          "short_name": "Draft email",
+          "short_name": "Draft single email",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -459,7 +459,7 @@
         },
         {
           "name": "Plan a non-trivial multi-step build before coding",
-          "short_name": "Explore build",
+          "short_name": "Plan multi-step build",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -476,7 +476,7 @@
         },
         {
           "name": "Run today's ClickUp queue across the whole workspace",
-          "short_name": "Daily queue",
+          "short_name": "Run daily queue",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -493,7 +493,7 @@
         },
         {
           "name": "Sync the public AIOS dashboard with brain content",
-          "short_name": "Sync dashboard",
+          "short_name": "Sync AIOS dashboard",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -510,7 +510,7 @@
         },
         {
           "name": "Archive raw Wispr drops before processing",
-          "short_name": "Archive Wispr",
+          "short_name": "Archive Wispr drops",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -536,7 +536,7 @@
         },
         {
           "name": "Daily morning summary of today's meetings with prep notes",
-          "short_name": "Meeting prep",
+          "short_name": "Prep daily meetings",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -549,7 +549,7 @@
         },
         {
           "name": "Drift audit on stale data/README.md and loose dept files",
-          "short_name": "Drift audit",
+          "short_name": "Audit repo drift",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -562,7 +562,7 @@
         },
         {
           "name": "Friday weekly pulse roll-up across pipeline, clients, and goals",
-          "short_name": "Weekly pulse",
+          "short_name": "Weekly business pulse",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -575,7 +575,7 @@
         },
         {
           "name": "Generate a daily brief and post to Slack",
-          "short_name": "Daily brief",
+          "short_name": "Generate daily brief",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -588,7 +588,7 @@
         },
         {
           "name": "Polish smart email drafting for context-aware tone",
-          "short_name": "Polish email draft",
+          "short_name": "Refine email tone",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -614,7 +614,7 @@
         },
         {
           "name": "Schedule clickup-daily to run automatically at 7:15 AM",
-          "short_name": "Schedule daily run",
+          "short_name": "Schedule daily queue",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -627,7 +627,7 @@
         },
         {
           "name": "Send a Telegram or SMS summary after Claude completes a task",
-          "short_name": "Task summary SMS",
+          "short_name": "Send task summary",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -661,7 +661,7 @@
       "tasks": [
         {
           "name": "Build, debug, or review an n8n workflow",
-          "short_name": "n8n workflow",
+          "short_name": "Build n8n flows",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -695,7 +695,7 @@
         },
         {
           "name": "Detect when a deployed Speed-to-Lead system breaks",
-          "short_name": "System alerts",
+          "short_name": "Detect system breaks",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -708,7 +708,7 @@
         },
         {
           "name": "Per-client system health monitoring (response time, conversion)",
-          "short_name": "Health monitoring",
+          "short_name": "Monitor client systems",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -721,7 +721,7 @@
         },
         {
           "name": "Weekly product metrics roll-up",
-          "short_name": "Product metrics",
+          "short_name": "Weekly metrics",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -742,7 +742,7 @@
       "tasks": [
         {
           "name": "Repurpose long-form content into LinkedIn posts",
-          "short_name": "LinkedIn posts",
+          "short_name": "Repurpose to LinkedIn",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -759,7 +759,7 @@
         },
         {
           "name": "Research trending AI topics for YouTube content",
-          "short_name": "Content research",
+          "short_name": "Research AI content",
           "importance": "medium",
           "queued": false,
           "status": "done",
@@ -789,7 +789,7 @@
         },
         {
           "name": "Generate YouTube descriptions and thumbnails from script",
-          "short_name": "YouTube assets",
+          "short_name": "Generate YouTube assets",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -802,7 +802,7 @@
         },
         {
           "name": "Repurpose long-form into Shorts and Reels",
-          "short_name": "Shorts & Reels",
+          "short_name": "Make Shorts & Reels",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -815,7 +815,7 @@
         },
         {
           "name": "Schedule content research weekly",
-          "short_name": "Schedule research",
+          "short_name": "Schedule content research",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -828,7 +828,7 @@
         },
         {
           "name": "Schedule voice AI intel weekly",
-          "short_name": "Schedule voice AI",
+          "short_name": "Schedule AI intel",
           "importance": "medium",
           "queued": false,
           "status": "todo",
