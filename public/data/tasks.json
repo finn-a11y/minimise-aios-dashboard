@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-12T00:47:13Z",
+  "generated_at": "2026-05-12T19:55:14Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -10,12 +10,12 @@
   },
   "stats": {
     "tasks_automated": 21,
-    "tasks_total": 64,
+    "tasks_total": 71,
     "hours_saved_per_week": 38.6,
     "tasks_by_status": {
       "done": 21,
       "queued": 0,
-      "todo": 43
+      "todo": 50
     }
   },
   "departments": [
@@ -816,7 +816,7 @@
       "slug": "marketing",
       "name": "Marketing",
       "tasks_automated": 2,
-      "tasks_total": 7,
+      "tasks_total": 14,
       "tasks": [
         {
           "name": "Repurpose long-form content into LinkedIn posts",
@@ -853,8 +853,60 @@
           ]
         },
         {
+          "name": "Aggregate marketing platform metrics across YouTube, TikTok, Instagram, LinkedIn",
+          "short_name": "Aggregate platform metrics",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Attribute content posts to pipeline outcomes via Bitly and ClickUp",
+          "short_name": "Content attribution",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Auto-publish LinkedIn posts on a cadence",
           "short_name": "Publish LinkedIn",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Capture Finn's on-camera voice profile for scripting",
+          "short_name": "Capture voice profile",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Closed-loop content review cadence (performance into next-content decisions)",
+          "short_name": "Content review loop",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -879,8 +931,47 @@
           "automated_by": []
         },
         {
+          "name": "Ingest external YouTube transcripts and surface build ideas",
+          "short_name": "YouTube transcript scribe",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Repurpose long-form into Shorts and Reels",
           "short_name": "Make Shorts & Reels",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Research Instagram content trends from curated creator list",
+          "short_name": "Instagram content research",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Research TikTok content trends from curated creator list",
+          "short_name": "TikTok content research",
           "importance": "medium",
           "queued": false,
           "status": "todo",
