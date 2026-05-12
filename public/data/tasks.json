@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-12T19:55:14Z",
+  "generated_at": "2026-05-12T23:55:01Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -10,12 +10,12 @@
   },
   "stats": {
     "tasks_automated": 21,
-    "tasks_total": 71,
+    "tasks_total": 98,
     "hours_saved_per_week": 38.6,
     "tasks_by_status": {
       "done": 21,
       "queued": 0,
-      "todo": 50
+      "todo": 77
     }
   },
   "departments": [
@@ -392,7 +392,7 @@
       "slug": "delivery",
       "name": "Delivery",
       "tasks_automated": 1,
-      "tasks_total": 6,
+      "tasks_total": 12,
       "tasks": [
         {
           "name": "Generate a client performance report",
@@ -412,8 +412,34 @@
           ]
         },
         {
+          "name": "Active-client touchpoint log (parallel to Outreach-tab structure)",
+          "short_name": "Active-client log",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Auto-flag dormant clients with no contact for 60 days",
           "short_name": "Flag dormant clients",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Auto-generated end-of-month client report",
+          "short_name": "Monthly client report",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -438,8 +464,60 @@
           "automated_by": []
         },
         {
+          "name": "Client-facing live performance dashboard",
+          "short_name": "Client dashboard",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "CRM hygiene audit skill (stale tasks, duplicates, orphans, missing fields)",
+          "short_name": "CRM hygiene audit",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Onboard a new client (ClickUp project, welcome email, Ziv handoff)",
           "short_name": "Onboard client",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Overdue-reply detector on client threads",
+          "short_name": "Overdue client replies",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Pipeline lifecycle move automation (Prospect to Active to Archived folder mv)",
+          "short_name": "Lifecycle folder moves",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -482,7 +560,7 @@
       "slug": "operations",
       "name": "Operations",
       "tasks_automated": 6,
-      "tasks_total": 17,
+      "tasks_total": 38,
       "tasks": [
         {
           "name": "Build, optimise, or audit a Claude Code skill",
@@ -587,8 +665,47 @@
           ]
         },
         {
+          "name": "Active CRM watcher (proactive priorities + stale work surfacing)",
+          "short_name": "Active CRM watcher",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Aggregated access audit log digest (weekly, anomaly ping)",
+          "short_name": "Access log digest",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Archive raw Wispr drops before processing",
           "short_name": "Archive Wispr drops",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Auto-register new skills (post-build hook drafts skills.yml row + CLAUDE.md row)",
+          "short_name": "Auto-register skills",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -613,8 +730,34 @@
           "automated_by": []
         },
         {
+          "name": "Credential inventory map (Supabase Vault + vendor dashboards)",
+          "short_name": "Credential inventory",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Daily morning summary of today's meetings with prep notes",
           "short_name": "Prep daily meetings",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Dashboard drift audit (.claude/skills/ vs skills.yml vs tasks.yml)",
+          "short_name": "Dashboard drift audit",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -665,8 +808,86 @@
           "automated_by": []
         },
         {
+          "name": "Hook health check (active hooks, last-fired, referenced-script existence)",
+          "short_name": "Hook health check",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Migrate loose local secrets into a controlled vault",
+          "short_name": "Secrets vault migrate",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "New-tool onboarding checklist skill (MCP / SaaS / client integration)",
+          "short_name": "Tool onboarding",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Outbound-asset internal-identifier scrub (sales-* + email-draft + process-call)",
+          "short_name": "Outbound scrub",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Polish smart email drafting for context-aware tone",
           "short_name": "Refine email tone",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Post-dashboard-data edit auto-run dashboard-sync",
+          "short_name": "Auto-sync dashboard",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Pre-commit secret-scan hook (gitleaks or trufflehog)",
+          "short_name": "Secret-scan hook",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -691,6 +912,19 @@
           "automated_by": []
         },
         {
+          "name": "Reliability audit on existing CRM-writing skills (email-draft, sales-proposal-gen, process-call subtask creation)",
+          "short_name": "CRM-writing reliability audit",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Schedule clickup-daily to run automatically at 7:15 AM",
           "short_name": "Schedule daily queue",
           "importance": "medium",
@@ -704,8 +938,125 @@
           "automated_by": []
         },
         {
+          "name": "Secret rotation cadence check (weekly launchd, ClickUp + Slack)",
+          "short_name": "Rotation check",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Secret-incident response playbook skill",
+          "short_name": "Incident playbook",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Send a Telegram or SMS summary after Claude completes a task",
           "short_name": "Send task summary",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Skill misfire detection (post-skill-run hook + jsonl + weekly digest)",
+          "short_name": "Skill misfire detection",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Skill usage tracker (dead-skill pruning, 30/60-day flag)",
+          "short_name": "Skill usage tracker",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "SKILL.md to behaviour reconciliation (monthly declared vs actual)",
+          "short_name": "SKILL.md reconciliation",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Task close-out automation (skills confirm subtask completion)",
+          "short_name": "Task close-out",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Task creation convention / instruction file (stop Claude guessing fields)",
+          "short_name": "Task creation convention",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Team-vault access grant/revoke skill (Slack diff + access log)",
+          "short_name": "Team-vault grants",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Teammate offboarding revoke checklist skill",
+          "short_name": "Offboarding revoke",
           "importance": "medium",
           "queued": false,
           "status": "todo",
