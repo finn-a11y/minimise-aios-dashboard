@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-12T19:55:14Z",
+  "generated_at": "2026-05-12T23:55:01Z",
   "instance": {
     "name": "Minimise",
     "owner": "Finn Kilworth",
@@ -14,7 +14,7 @@
     "hours_saved_per_week": 38.6,
     "automations_live": 18,
     "tasks_automated": 21,
-    "tasks_total": 71,
+    "tasks_total": 98,
     "automation_modes": {
       "manual": 20,
       "scheduled": 1,
@@ -84,7 +84,7 @@
       "name": "Delivery",
       "automations_live": 1,
       "tasks_automated": 1,
-      "tasks_total": 6,
+      "tasks_total": 12,
       "hours_saved_per_week": 1.5,
       "automation_modes": {
         "manual": 1,
@@ -106,7 +106,7 @@
       "name": "Operations",
       "automations_live": 6,
       "tasks_automated": 6,
-      "tasks_total": 17,
+      "tasks_total": 38,
       "hours_saved_per_week": 9.3,
       "automation_modes": {
         "manual": 5,
