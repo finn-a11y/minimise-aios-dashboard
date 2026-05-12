@@ -1,6 +1,6 @@
 {
   "$schema_version": "2",
-  "generated_at": "2026-05-07T02:23:42Z",
+  "generated_at": "2026-05-12T00:47:13Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -10,12 +10,12 @@
   },
   "stats": {
     "tasks_automated": 21,
-    "tasks_total": 58,
+    "tasks_total": 64,
     "hours_saved_per_week": 38.6,
     "tasks_by_status": {
       "done": 21,
       "queued": 0,
-      "todo": 37
+      "todo": 43
     }
   },
   "departments": [
@@ -23,7 +23,7 @@
       "slug": "sales",
       "name": "Sales",
       "tasks_automated": 9,
-      "tasks_total": 19,
+      "tasks_total": 25,
       "tasks": [
         {
           "name": "Advance and halt outreach cadences",
@@ -192,8 +192,34 @@
           "automated_by": []
         },
         {
+          "name": "Auto-embed vertical-matched case studies in overview decks",
+          "short_name": "Match case studies",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Auto-research a prospect before a discovery call",
           "short_name": "Research prospects",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Auto-send low-risk outreach follow-ups (E2 only, allowlisted)",
+          "short_name": "Auto-send E2",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -220,6 +246,19 @@
         {
           "name": "Auto-update ClickUp Pipeline from phone-call recaps",
           "short_name": "Sync calls to pipeline",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Generate a recorded onboarding walkthrough video",
+          "short_name": "Onboarding video",
           "importance": "medium",
           "queued": false,
           "status": "todo",
@@ -283,6 +322,19 @@
           "automated_by": []
         },
         {
+          "name": "Render proposals and overviews in Canva instead of static HTML",
+          "short_name": "Canva for assets",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
           "name": "Schedule sales-outreach-run daily",
           "short_name": "Schedule outreach run",
           "importance": "medium",
@@ -298,6 +350,32 @@
         {
           "name": "Standalone pipeline staleness sweep with Slack ping",
           "short_name": "Flag stale leads",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Store generated client assets in Google Drive",
+          "short_name": "Assets in Drive",
+          "importance": "medium",
+          "queued": false,
+          "status": "todo",
+          "mode": null,
+          "modes": [],
+          "manual_hours_per_week": null,
+          "automated_hours_per_week": null,
+          "hours_saved_per_week": null,
+          "automated_by": []
+        },
+        {
+          "name": "Trigger onboarding workflow when a deal closes",
+          "short_name": "Trigger onboarding",
           "importance": "medium",
           "queued": false,
           "status": "todo",
