@@ -1,6 +1,6 @@
 {
-  "$schema_version": "2",
-  "generated_at": "2026-05-12T23:55:01Z",
+  "$schema_version": "3",
+  "generated_at": "2026-05-13T00:28:35Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -24,367 +24,407 @@
       "name": "Sales",
       "tasks_automated": 9,
       "tasks_total": 25,
-      "tasks": [
+      "categories": [
         {
-          "name": "Advance and halt outreach cadences",
-          "short_name": "Run outreach steps",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 1.8,
-          "automated_by": [
-            "sales-outreach-run"
-          ]
-        },
-        {
-          "name": "Build a branded proposal with ROI numbers",
-          "short_name": "Generate proposal",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 3.0,
-          "automated_hours_per_week": 0.5,
-          "hours_saved_per_week": 2.5,
-          "automated_by": [
-            "sales-proposal-gen"
-          ]
-        },
-        {
-          "name": "Draft daily outreach follow-up emails",
-          "short_name": "Draft follow-ups",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 4.0,
-          "automated_hours_per_week": 0.3,
+          "name": "Lead acquisition",
+          "tasks_total": 1,
+          "tasks_automated": 1,
           "hours_saved_per_week": 3.7,
-          "automated_by": [
-            "sales-outreach-run"
+          "tasks": [
+            {
+              "name": "Scrape new leads from Google Maps and Apollo",
+              "short_name": "Scrape leads",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 4.0,
+              "automated_hours_per_week": 0.3,
+              "hours_saved_per_week": 3.7,
+              "automated_by": [
+                "sales-outreach-scrape"
+              ]
+            }
           ]
         },
         {
-          "name": "Generate a discovery-call overview deck",
-          "short_name": "Generate overview deck",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.5,
-          "automated_hours_per_week": 0.4,
-          "hours_saved_per_week": 2.1,
-          "automated_by": [
-            "sales-overview-gen"
+          "name": "Pipeline management",
+          "tasks_total": 8,
+          "tasks_automated": 2,
+          "hours_saved_per_week": 3,
+          "tasks": [
+            {
+              "name": "Process a virtual sales call transcript",
+              "short_name": "Process sales call",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.3,
+              "hours_saved_per_week": 1.7,
+              "automated_by": [
+                "process-call"
+              ]
+            },
+            {
+              "name": "Update ClickUp Pipeline after a sales call",
+              "short_name": "Update pipeline",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 1.5,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 1.3,
+              "automated_by": [
+                "process-call"
+              ]
+            },
+            {
+              "name": "Auto-transcript pipeline (Drive watcher kicks off process-call)",
+              "short_name": "Auto-transcribe calls",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Auto-update ClickUp Pipeline from phone-call recaps",
+              "short_name": "Sync calls to pipeline",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Move warm-reply scraped leads into ClickUp Pipeline",
+              "short_name": "Convert warm leads",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Process Wispr drops for non-outreach phone calls",
+              "short_name": "Process Wispr drops",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Standalone pipeline staleness sweep with Slack ping",
+              "short_name": "Flag stale leads",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Trigger onboarding workflow when a deal closes",
+              "short_name": "Trigger onboarding",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Log outreach phone calls into the sheet",
-          "short_name": "Log call notes",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 1.5,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 1.3,
-          "automated_by": [
-            "sales-outreach-run"
+          "name": "Comms",
+          "tasks_total": 7,
+          "tasks_automated": 3,
+          "hours_saved_per_week": 6.800000000000001,
+          "tasks": [
+            {
+              "name": "Advance and halt outreach cadences",
+              "short_name": "Run outreach steps",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 1.8,
+              "automated_by": [
+                "sales-outreach-run"
+              ]
+            },
+            {
+              "name": "Draft daily outreach follow-up emails",
+              "short_name": "Draft follow-ups",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 4.0,
+              "automated_hours_per_week": 0.3,
+              "hours_saved_per_week": 3.7,
+              "automated_by": [
+                "sales-outreach-run"
+              ]
+            },
+            {
+              "name": "Log outreach phone calls into the sheet",
+              "short_name": "Log call notes",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 1.5,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 1.3,
+              "automated_by": [
+                "sales-outreach-run"
+              ]
+            },
+            {
+              "name": "Auto-draft replies to inbound outreach replies",
+              "short_name": "Reply to inbound",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Auto-send low-risk outreach follow-ups (E2 only, allowlisted)",
+              "short_name": "Auto-send E2",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Nudge owner on stale outreach leads after N days",
+              "short_name": "Nudge stale leads",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Schedule sales-outreach-run daily",
+              "short_name": "Schedule outreach run",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Process a virtual sales call transcript",
-          "short_name": "Process sales call",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.3,
-          "hours_saved_per_week": 1.7,
-          "automated_by": [
-            "process-call"
+          "name": "Asset creation",
+          "tasks_total": 6,
+          "tasks_automated": 2,
+          "hours_saved_per_week": 4.6,
+          "tasks": [
+            {
+              "name": "Build a branded proposal with ROI numbers",
+              "short_name": "Generate proposal",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 3.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 2.5,
+              "automated_by": [
+                "sales-proposal-gen"
+              ]
+            },
+            {
+              "name": "Generate a discovery-call overview deck",
+              "short_name": "Generate overview deck",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.5,
+              "automated_hours_per_week": 0.4,
+              "hours_saved_per_week": 2.1,
+              "automated_by": [
+                "sales-overview-gen"
+              ]
+            },
+            {
+              "name": "Auto-embed vertical-matched case studies in overview decks",
+              "short_name": "Match case studies",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Generate a recorded onboarding walkthrough video",
+              "short_name": "Onboarding video",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Render proposals and overviews in Canva instead of static HTML",
+              "short_name": "Canva for assets",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Store generated client assets in Google Drive",
+              "short_name": "Assets in Drive",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Research a competitor and produce a strategy report",
-          "short_name": "Research competitors",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 3.0,
-          "automated_hours_per_week": 0.5,
+          "name": "Sales intel",
+          "tasks_total": 3,
+          "tasks_automated": 1,
           "hours_saved_per_week": 2.5,
-          "automated_by": [
-            "sales-competitor-analysis"
+          "tasks": [
+            {
+              "name": "Research a competitor and produce a strategy report",
+              "short_name": "Research competitors",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 3.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 2.5,
+              "automated_by": [
+                "sales-competitor-analysis"
+              ]
+            },
+            {
+              "name": "Auto-research a prospect before a discovery call",
+              "short_name": "Research prospects",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Generate weekly outreach performance report by vertical",
+              "short_name": "Weekly outreach report",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
-        },
-        {
-          "name": "Scrape new leads from Google Maps and Apollo",
-          "short_name": "Scrape leads",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 4.0,
-          "automated_hours_per_week": 0.3,
-          "hours_saved_per_week": 3.7,
-          "automated_by": [
-            "sales-outreach-scrape"
-          ]
-        },
-        {
-          "name": "Update ClickUp Pipeline after a sales call",
-          "short_name": "Update pipeline",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 1.5,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 1.3,
-          "automated_by": [
-            "process-call"
-          ]
-        },
-        {
-          "name": "Auto-draft replies to inbound outreach replies",
-          "short_name": "Reply to inbound",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-embed vertical-matched case studies in overview decks",
-          "short_name": "Match case studies",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-research a prospect before a discovery call",
-          "short_name": "Research prospects",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-send low-risk outreach follow-ups (E2 only, allowlisted)",
-          "short_name": "Auto-send E2",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-transcript pipeline (Drive watcher kicks off process-call)",
-          "short_name": "Auto-transcribe calls",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-update ClickUp Pipeline from phone-call recaps",
-          "short_name": "Sync calls to pipeline",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Generate a recorded onboarding walkthrough video",
-          "short_name": "Onboarding video",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Generate weekly outreach performance report by vertical",
-          "short_name": "Weekly outreach report",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Move warm-reply scraped leads into ClickUp Pipeline",
-          "short_name": "Convert warm leads",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Nudge owner on stale outreach leads after N days",
-          "short_name": "Nudge stale leads",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Process Wispr drops for non-outreach phone calls",
-          "short_name": "Process Wispr drops",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Render proposals and overviews in Canva instead of static HTML",
-          "short_name": "Canva for assets",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Schedule sales-outreach-run daily",
-          "short_name": "Schedule outreach run",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Standalone pipeline staleness sweep with Slack ping",
-          "short_name": "Flag stale leads",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Store generated client assets in Google Drive",
-          "short_name": "Assets in Drive",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Trigger onboarding workflow when a deal closes",
-          "short_name": "Trigger onboarding",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
         }
       ]
     },
@@ -393,166 +433,198 @@
       "name": "Delivery",
       "tasks_automated": 1,
       "tasks_total": 12,
-      "tasks": [
+      "categories": [
         {
-          "name": "Generate a client performance report",
-          "short_name": "Generate client report",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.5,
-          "hours_saved_per_week": 1.5,
-          "automated_by": [
-            "relationships-client-reporting"
+          "name": "CRM management",
+          "tasks_total": 2,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "CRM hygiene audit skill (stale tasks, duplicates, orphans, missing fields)",
+              "short_name": "CRM hygiene audit",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Pipeline lifecycle move automation (Prospect to Active to Archived folder mv)",
+              "short_name": "Lifecycle folder moves",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Active-client touchpoint log (parallel to Outreach-tab structure)",
-          "short_name": "Active-client log",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Client communications",
+          "tasks_total": 5,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Active-client touchpoint log (parallel to Outreach-tab structure)",
+              "short_name": "Active-client log",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Auto-flag dormant clients with no contact for 60 days",
+              "short_name": "Flag dormant clients",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Overdue-reply detector on client threads",
+              "short_name": "Overdue client replies",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Remind on partner check-in cadences (Leighton, Ladder Co)",
+              "short_name": "Remind on partners",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Suggest proactive client check-in slots in Calendar",
+              "short_name": "Suggest check-ins",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Auto-flag dormant clients with no contact for 60 days",
-          "short_name": "Flag dormant clients",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Client reporting",
+          "tasks_total": 4,
+          "tasks_automated": 1,
+          "hours_saved_per_week": 1.5,
+          "tasks": [
+            {
+              "name": "Generate a client performance report",
+              "short_name": "Generate client report",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 1.5,
+              "automated_by": [
+                "relationships-client-reporting"
+              ]
+            },
+            {
+              "name": "Auto-generated end-of-month client report",
+              "short_name": "Monthly client report",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Auto-send weekly client performance reports",
+              "short_name": "Auto-send reports",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Client-facing live performance dashboard",
+              "short_name": "Client dashboard",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Auto-generated end-of-month client report",
-          "short_name": "Monthly client report",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-send weekly client performance reports",
-          "short_name": "Auto-send reports",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Client-facing live performance dashboard",
-          "short_name": "Client dashboard",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "CRM hygiene audit skill (stale tasks, duplicates, orphans, missing fields)",
-          "short_name": "CRM hygiene audit",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Onboard a new client (ClickUp project, welcome email, Ziv handoff)",
-          "short_name": "Onboard client",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Overdue-reply detector on client threads",
-          "short_name": "Overdue client replies",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Pipeline lifecycle move automation (Prospect to Active to Archived folder mv)",
-          "short_name": "Lifecycle folder moves",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Remind on partner check-in cadences (Leighton, Ladder Co)",
-          "short_name": "Remind on partners",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Suggest proactive client check-in slots in Calendar",
-          "short_name": "Suggest check-ins",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Onboarding",
+          "tasks_total": 1,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Onboard a new client (ClickUp project, welcome email, Ziv handoff)",
+              "short_name": "Onboard client",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         }
       ]
     },
@@ -561,524 +633,564 @@
       "name": "Operations",
       "tasks_automated": 6,
       "tasks_total": 38,
-      "tasks": [
+      "categories": [
         {
-          "name": "Build, optimise, or audit a Claude Code skill",
-          "short_name": "Build a skill",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 3.0,
-          "automated_hours_per_week": 0.5,
-          "hours_saved_per_week": 2.5,
-          "automated_by": [
-            "skill-builder"
+          "name": "Task management",
+          "tasks_total": 15,
+          "tasks_automated": 3,
+          "hours_saved_per_week": 3.9000000000000004,
+          "tasks": [
+            {
+              "name": "Draft a single Gmail in someone's voice",
+              "short_name": "Draft single email",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 1.8,
+              "automated_by": [
+                "email-draft"
+              ]
+            },
+            {
+              "name": "Draw an editable Excalidraw diagram from a description",
+              "short_name": "Draw diagram",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 1.0,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 0.8,
+              "automated_by": [
+                "excalidraw-diagram"
+              ]
+            },
+            {
+              "name": "Run today's ClickUp queue across the whole workspace",
+              "short_name": "Run daily queue",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "scheduled",
+              "modes": [
+                "scheduled"
+              ],
+              "manual_hours_per_week": 1.5,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 1.3,
+              "automated_by": [
+                "clickup-daily"
+              ]
+            },
+            {
+              "name": "Active CRM watcher (proactive priorities + stale work surfacing)",
+              "short_name": "Active CRM watcher",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Archive raw Wispr drops before processing",
+              "short_name": "Archive Wispr drops",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Auto-update ClickUp Pipeline from any voice or text mention",
+              "short_name": "Auto-sync pipeline",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Daily morning summary of today's meetings with prep notes",
+              "short_name": "Prep daily meetings",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Friday weekly pulse roll-up across pipeline, clients, and goals",
+              "short_name": "Weekly business pulse",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Generate a daily brief and post to Slack",
+              "short_name": "Generate daily brief",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Process internal team meetings and sales roleplays",
+              "short_name": "Process meetings",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Schedule clickup-daily to run automatically at 7:15 AM",
+              "short_name": "Schedule daily queue",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Send a Telegram or SMS summary after Claude completes a task",
+              "short_name": "Send task summary",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Task close-out automation (skills confirm subtask completion)",
+              "short_name": "Task close-out",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Task creation convention / instruction file (stop Claude guessing fields)",
+              "short_name": "Task creation convention",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Triage incoming Gmail with auto-labels and priority",
+              "short_name": "Triage Gmail",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Draft a single Gmail in someone's voice",
-          "short_name": "Draft single email",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 1.8,
-          "automated_by": [
-            "email-draft"
+          "name": "AIOS maintenance",
+          "tasks_total": 9,
+          "tasks_automated": 2,
+          "hours_saved_per_week": 5,
+          "tasks": [
+            {
+              "name": "Build, optimise, or audit a Claude Code skill",
+              "short_name": "Build a skill",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 3.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 2.5,
+              "automated_by": [
+                "skill-builder"
+              ]
+            },
+            {
+              "name": "Plan a non-trivial multi-step build before coding",
+              "short_name": "Plan multi-step build",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 3.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 2.5,
+              "automated_by": [
+                "explore"
+              ]
+            },
+            {
+              "name": "Auto-register new skills (post-build hook drafts skills.yml row + CLAUDE.md row)",
+              "short_name": "Auto-register skills",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Hook health check (active hooks, last-fired, referenced-script existence)",
+              "short_name": "Hook health check",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Polish smart email drafting for context-aware tone",
+              "short_name": "Refine email tone",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Reliability audit on existing CRM-writing skills (email-draft, sales-proposal-gen, process-call subtask creation)",
+              "short_name": "CRM-writing reliability audit",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Skill misfire detection (post-skill-run hook + jsonl + weekly digest)",
+              "short_name": "Skill misfire detection",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Skill usage tracker (dead-skill pruning, 30/60-day flag)",
+              "short_name": "Skill usage tracker",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "SKILL.md to behaviour reconciliation (monthly declared vs actual)",
+              "short_name": "SKILL.md reconciliation",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Draw an editable Excalidraw diagram from a description",
-          "short_name": "Draw diagram",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 1.0,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 0.8,
-          "automated_by": [
-            "excalidraw-diagram"
+          "name": "Repo hygiene",
+          "tasks_total": 1,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Drift audit on stale data/README.md and loose dept files",
+              "short_name": "Audit repo drift",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Plan a non-trivial multi-step build before coding",
-          "short_name": "Plan multi-step build",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 3.0,
-          "automated_hours_per_week": 0.5,
-          "hours_saved_per_week": 2.5,
-          "automated_by": [
-            "explore"
-          ]
-        },
-        {
-          "name": "Run today's ClickUp queue across the whole workspace",
-          "short_name": "Run daily queue",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "scheduled",
-          "modes": [
-            "scheduled"
-          ],
-          "manual_hours_per_week": 1.5,
-          "automated_hours_per_week": 0.2,
-          "hours_saved_per_week": 1.3,
-          "automated_by": [
-            "clickup-daily"
-          ]
-        },
-        {
-          "name": "Sync the public AIOS dashboard with brain content",
-          "short_name": "Sync AIOS dashboard",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 0.5,
-          "automated_hours_per_week": 0.1,
+          "name": "Dashboard control",
+          "tasks_total": 3,
+          "tasks_automated": 1,
           "hours_saved_per_week": 0.4,
-          "automated_by": [
-            "dashboard-sync"
+          "tasks": [
+            {
+              "name": "Sync the public AIOS dashboard with brain content",
+              "short_name": "Sync AIOS dashboard",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 0.5,
+              "automated_hours_per_week": 0.1,
+              "hours_saved_per_week": 0.4,
+              "automated_by": [
+                "dashboard-sync"
+              ]
+            },
+            {
+              "name": "Dashboard drift audit (.claude/skills/ vs skills.yml vs tasks.yml)",
+              "short_name": "Dashboard drift audit",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Post-dashboard-data edit auto-run dashboard-sync",
+              "short_name": "Auto-sync dashboard",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
           ]
         },
         {
-          "name": "Active CRM watcher (proactive priorities + stale work surfacing)",
-          "short_name": "Active CRM watcher",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Aggregated access audit log digest (weekly, anomaly ping)",
-          "short_name": "Access log digest",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Archive raw Wispr drops before processing",
-          "short_name": "Archive Wispr drops",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-register new skills (post-build hook drafts skills.yml row + CLAUDE.md row)",
-          "short_name": "Auto-register skills",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Auto-update ClickUp Pipeline from any voice or text mention",
-          "short_name": "Auto-sync pipeline",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Credential inventory map (Supabase Vault + vendor dashboards)",
-          "short_name": "Credential inventory",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Daily morning summary of today's meetings with prep notes",
-          "short_name": "Prep daily meetings",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Dashboard drift audit (.claude/skills/ vs skills.yml vs tasks.yml)",
-          "short_name": "Dashboard drift audit",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Drift audit on stale data/README.md and loose dept files",
-          "short_name": "Audit repo drift",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Friday weekly pulse roll-up across pipeline, clients, and goals",
-          "short_name": "Weekly business pulse",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Generate a daily brief and post to Slack",
-          "short_name": "Generate daily brief",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Hook health check (active hooks, last-fired, referenced-script existence)",
-          "short_name": "Hook health check",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Migrate loose local secrets into a controlled vault",
-          "short_name": "Secrets vault migrate",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "New-tool onboarding checklist skill (MCP / SaaS / client integration)",
-          "short_name": "Tool onboarding",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Outbound-asset internal-identifier scrub (sales-* + email-draft + process-call)",
-          "short_name": "Outbound scrub",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Polish smart email drafting for context-aware tone",
-          "short_name": "Refine email tone",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Post-dashboard-data edit auto-run dashboard-sync",
-          "short_name": "Auto-sync dashboard",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Pre-commit secret-scan hook (gitleaks or trufflehog)",
-          "short_name": "Secret-scan hook",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Process internal team meetings and sales roleplays",
-          "short_name": "Process meetings",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Reliability audit on existing CRM-writing skills (email-draft, sales-proposal-gen, process-call subtask creation)",
-          "short_name": "CRM-writing reliability audit",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Schedule clickup-daily to run automatically at 7:15 AM",
-          "short_name": "Schedule daily queue",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Secret rotation cadence check (weekly launchd, ClickUp + Slack)",
-          "short_name": "Rotation check",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Secret-incident response playbook skill",
-          "short_name": "Incident playbook",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Send a Telegram or SMS summary after Claude completes a task",
-          "short_name": "Send task summary",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Skill misfire detection (post-skill-run hook + jsonl + weekly digest)",
-          "short_name": "Skill misfire detection",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Skill usage tracker (dead-skill pruning, 30/60-day flag)",
-          "short_name": "Skill usage tracker",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "SKILL.md to behaviour reconciliation (monthly declared vs actual)",
-          "short_name": "SKILL.md reconciliation",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Task close-out automation (skills confirm subtask completion)",
-          "short_name": "Task close-out",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Task creation convention / instruction file (stop Claude guessing fields)",
-          "short_name": "Task creation convention",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Team-vault access grant/revoke skill (Slack diff + access log)",
-          "short_name": "Team-vault grants",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Teammate offboarding revoke checklist skill",
-          "short_name": "Offboarding revoke",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Triage incoming Gmail with auto-labels and priority",
-          "short_name": "Triage Gmail",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Security + credential hygiene",
+          "tasks_total": 10,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Aggregated access audit log digest (weekly, anomaly ping)",
+              "short_name": "Access log digest",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Credential inventory map (Supabase Vault + vendor dashboards)",
+              "short_name": "Credential inventory",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Migrate loose local secrets into a controlled vault",
+              "short_name": "Secrets vault migrate",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "New-tool onboarding checklist skill (MCP / SaaS / client integration)",
+              "short_name": "Tool onboarding",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Outbound-asset internal-identifier scrub (sales-* + email-draft + process-call)",
+              "short_name": "Outbound scrub",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Pre-commit secret-scan hook (gitleaks or trufflehog)",
+              "short_name": "Secret-scan hook",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Secret rotation cadence check (weekly launchd, ClickUp + Slack)",
+              "short_name": "Rotation check",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Secret-incident response playbook skill",
+              "short_name": "Incident playbook",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Team-vault access grant/revoke skill (Slack diff + access log)",
+              "short_name": "Team-vault grants",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Teammate offboarding revoke checklist skill",
+              "short_name": "Offboarding revoke",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         }
       ]
     },
@@ -1087,79 +1199,103 @@
       "name": "Development",
       "tasks_automated": 2,
       "tasks_total": 5,
-      "tasks": [
+      "categories": [
         {
-          "name": "Build, debug, or review an n8n workflow",
-          "short_name": "Build n8n flows",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.5,
+          "name": "Workflow building",
+          "tasks_total": 1,
+          "tasks_automated": 1,
           "hours_saved_per_week": 1.5,
-          "automated_by": [
-            "dev-n8n-workflow"
+          "tasks": [
+            {
+              "name": "Build, debug, or review an n8n workflow",
+              "short_name": "Build n8n flows",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 1.5,
+              "automated_by": [
+                "dev-n8n-workflow"
+              ]
+            }
           ]
         },
         {
-          "name": "Check the latest voice AI tech and platform news",
-          "short_name": "Voice AI intel",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 1.5,
-          "automated_hours_per_week": 0.3,
+          "name": "System monitoring",
+          "tasks_total": 3,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Detect when a deployed Speed-to-Lead system breaks",
+              "short_name": "Detect system breaks",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Per-client system health monitoring (response time, conversion)",
+              "short_name": "Monitor client systems",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Weekly product metrics roll-up",
+              "short_name": "Weekly metrics",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
+        },
+        {
+          "name": "Tech intel",
+          "tasks_total": 1,
+          "tasks_automated": 1,
           "hours_saved_per_week": 1.2,
-          "automated_by": [
-            "dev-voice-ai-intel"
+          "tasks": [
+            {
+              "name": "Check the latest voice AI tech and platform news",
+              "short_name": "Voice AI intel",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 1.5,
+              "automated_hours_per_week": 0.3,
+              "hours_saved_per_week": 1.2,
+              "automated_by": [
+                "dev-voice-ai-intel"
+              ]
+            }
           ]
-        },
-        {
-          "name": "Detect when a deployed Speed-to-Lead system breaks",
-          "short_name": "Detect system breaks",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Per-client system health monitoring (response time, conversion)",
-          "short_name": "Monitor client systems",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Weekly product metrics roll-up",
-          "short_name": "Weekly metrics",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
         }
       ]
     },
@@ -1168,196 +1304,244 @@
       "name": "Marketing",
       "tasks_automated": 2,
       "tasks_total": 14,
-      "tasks": [
+      "categories": [
         {
-          "name": "Repurpose long-form content into LinkedIn posts",
-          "short_name": "Repurpose to LinkedIn",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.0,
-          "automated_hours_per_week": 0.3,
-          "hours_saved_per_week": 1.7,
-          "automated_by": [
-            "marketing-linkedin-content"
-          ]
-        },
-        {
-          "name": "Research trending AI topics for YouTube content",
-          "short_name": "Research AI content",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 2.5,
-          "automated_hours_per_week": 0.5,
+          "name": "Ideation",
+          "tasks_total": 1,
+          "tasks_automated": 1,
           "hours_saved_per_week": 2,
-          "automated_by": [
-            "marketing-content-research"
+          "tasks": [
+            {
+              "name": "Research trending AI topics for YouTube content",
+              "short_name": "Research AI content",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.5,
+              "automated_hours_per_week": 0.5,
+              "hours_saved_per_week": 2,
+              "automated_by": [
+                "marketing-content-research"
+              ]
+            }
           ]
         },
         {
-          "name": "Aggregate marketing platform metrics across YouTube, TikTok, Instagram, LinkedIn",
-          "short_name": "Aggregate platform metrics",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Content creation",
+          "tasks_total": 3,
+          "tasks_automated": 1,
+          "hours_saved_per_week": 1.7,
+          "tasks": [
+            {
+              "name": "Repurpose long-form content into LinkedIn posts",
+              "short_name": "Repurpose to LinkedIn",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 2.0,
+              "automated_hours_per_week": 0.3,
+              "hours_saved_per_week": 1.7,
+              "automated_by": [
+                "marketing-linkedin-content"
+              ]
+            },
+            {
+              "name": "Generate YouTube descriptions and thumbnails from script",
+              "short_name": "Generate YouTube assets",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Repurpose long-form into Shorts and Reels",
+              "short_name": "Make Shorts & Reels",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Attribute content posts to pipeline outcomes via Bitly and ClickUp",
-          "short_name": "Content attribution",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Scripting",
+          "tasks_total": 1,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Capture Finn's on-camera voice profile for scripting",
+              "short_name": "Capture voice profile",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Auto-publish LinkedIn posts on a cadence",
-          "short_name": "Publish LinkedIn",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Scheduling / posting",
+          "tasks_total": 1,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Auto-publish LinkedIn posts on a cadence",
+              "short_name": "Publish LinkedIn",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Capture Finn's on-camera voice profile for scripting",
-          "short_name": "Capture voice profile",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Research",
+          "tasks_total": 5,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Ingest external YouTube transcripts and surface build ideas",
+              "short_name": "YouTube transcript scribe",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Research Instagram content trends from curated creator list",
+              "short_name": "Instagram content research",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Research TikTok content trends from curated creator list",
+              "short_name": "TikTok content research",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Schedule content research weekly",
+              "short_name": "Schedule content research",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Schedule voice AI intel weekly",
+              "short_name": "Schedule AI intel",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Closed-loop content review cadence (performance into next-content decisions)",
-          "short_name": "Content review loop",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Generate YouTube descriptions and thumbnails from script",
-          "short_name": "Generate YouTube assets",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Ingest external YouTube transcripts and surface build ideas",
-          "short_name": "YouTube transcript scribe",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Repurpose long-form into Shorts and Reels",
-          "short_name": "Make Shorts & Reels",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Research Instagram content trends from curated creator list",
-          "short_name": "Instagram content research",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Research TikTok content trends from curated creator list",
-          "short_name": "TikTok content research",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Schedule content research weekly",
-          "short_name": "Schedule content research",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Schedule voice AI intel weekly",
-          "short_name": "Schedule AI intel",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Tracking",
+          "tasks_total": 3,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Aggregate marketing platform metrics across YouTube, TikTok, Instagram, LinkedIn",
+              "short_name": "Aggregate platform metrics",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Attribute content posts to pipeline outcomes via Bitly and ClickUp",
+              "short_name": "Content attribution",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Closed-loop content review cadence (performance into next-content decisions)",
+              "short_name": "Content review loop",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         }
       ]
     },
@@ -1366,62 +1550,86 @@
       "name": "Finance",
       "tasks_automated": 1,
       "tasks_total": 4,
-      "tasks": [
+      "categories": [
         {
-          "name": "Generate a filled service agreement Google Doc",
-          "short_name": "Generate contract",
-          "importance": "medium",
-          "queued": false,
-          "status": "done",
-          "mode": "manual",
-          "modes": [
-            "manual"
-          ],
-          "manual_hours_per_week": 1.0,
-          "automated_hours_per_week": 0.2,
+          "name": "Contracts",
+          "tasks_total": 1,
+          "tasks_automated": 1,
           "hours_saved_per_week": 0.8,
-          "automated_by": [
-            "finance-contract-gen"
+          "tasks": [
+            {
+              "name": "Generate a filled service agreement Google Doc",
+              "short_name": "Generate contract",
+              "importance": "medium",
+              "queued": false,
+              "status": "done",
+              "mode": "manual",
+              "modes": [
+                "manual"
+              ],
+              "manual_hours_per_week": 1.0,
+              "automated_hours_per_week": 0.2,
+              "hours_saved_per_week": 0.8,
+              "automated_by": [
+                "finance-contract-gen"
+              ]
+            }
           ]
         },
         {
-          "name": "Chase overdue invoices automatically",
-          "short_name": "Chase invoices",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Invoicing",
+          "tasks_total": 1,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Chase overdue invoices automatically",
+              "short_name": "Chase invoices",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         },
         {
-          "name": "Roll up monthly P&L summary",
-          "short_name": "Monthly P&L",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
-        },
-        {
-          "name": "Track MRR with a weekly snapshot",
-          "short_name": "Track MRR",
-          "importance": "medium",
-          "queued": false,
-          "status": "todo",
-          "mode": null,
-          "modes": [],
-          "manual_hours_per_week": null,
-          "automated_hours_per_week": null,
-          "hours_saved_per_week": null,
-          "automated_by": []
+          "name": "Financial reporting",
+          "tasks_total": 2,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "Roll up monthly P&L summary",
+              "short_name": "Monthly P&L",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Track MRR with a weekly snapshot",
+              "short_name": "Track MRR",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
         }
       ]
     }

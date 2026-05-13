@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import type { DashboardData, TasksData, DeptSlug } from "@/types/dashboard";
+import { flattenDepartmentTasks } from "@/types/dashboard";
 import * as d3Force from "d3-force";
 import * as d3Zoom from "d3-zoom";
 import * as d3Selection from "d3-selection";
@@ -98,9 +99,9 @@ function buildGraph(
   // skillSlug -> { mode: ..., taskIds: [...] }
   const skillMap = new Map<string, { mode: string | null; taskIds: string[] }>();
 
-  // Pre-pass: walk all tasks to collect skill data
+  // Pre-pass: walk all tasks to collect skill data (v3: flatten categories)
   depts.forEach((dept) => {
-    dept.tasks.forEach((task, ti) => {
+    flattenDepartmentTasks(dept).forEach((task, ti) => {
       const taskId = `task-${dept.slug}-${ti}`;
       (task.automated_by ?? []).forEach((slug, si) => {
         const mode = (task.modes && task.modes[si]) ?? task.mode ?? null;
@@ -135,7 +136,7 @@ function buildGraph(
     });
     links.push({ source: "centre", target: deptId, kind: "centre-dept" });
 
-    dept.tasks.forEach((task, ti) => {
+    flattenDepartmentTasks(dept).forEach((task, ti) => {
       const taskId = `task-${dept.slug}-${ti}`;
       const skillCount = (task.automated_by ?? []).length;
       const r = taskRadius(skillCount);
@@ -225,7 +226,7 @@ function MobileFallback({ data, tasksData }: { data: DashboardData; tasksData: T
             </span>
           </div>
           <ul className="space-y-1.5">
-            {dept.tasks.map((task) => {
+            {flattenDepartmentTasks(dept).map((task) => {
               const skillCount = (task.automated_by ?? []).length;
               const colour =
                 skillCount > 0

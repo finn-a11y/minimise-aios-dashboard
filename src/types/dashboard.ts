@@ -11,12 +11,48 @@ export type DeptSlug =
 
 export type AutomationStatus = "live" | "building" | "queued" | "killed";
 
+// ─── Linked assets (v3) ──────────────────────────────────────────────────────
+//
+// Each automation now carries a `linked_assets` list pass-through from the
+// skill's SKILL.md frontmatter. See `.claude/plans/aios-dashboard-spec.md`
+// § 1c for the schema-of-record.
+
+export type LinkedAssetType =
+  | "google_sheet"
+  | "google_doc"
+  | "google_drive_folder"
+  | "gmail_label"
+  | "clickup_list"
+  | "clickup_task"
+  | "slack_channel"
+  | "mcp_server"
+  | "repo_file"
+  | "external_repo"
+  | "webhook"
+  | "template"
+  | "other";
+
+export type LinkedAssetRole = "input" | "output" | "reference" | "template";
+
+export interface LinkedAsset {
+  name: string;
+  type: LinkedAssetType;
+  role: LinkedAssetRole;
+  id?: string;
+  url?: string;
+  note?: string;
+}
+
 export interface Automation {
   name: string;
   skill: string;
   status: AutomationStatus;
-  hours_per_week: number;
   description: string;
+  // v3 fields — `hours_per_week` is no longer emitted per-automation
+  mode?: "manual" | "scheduled" | "event";
+  linked_assets?: LinkedAsset[];
+  // legacy v2 field — kept permissive so old JSON still types-check
+  hours_per_week?: number;
 }
 
 export interface Department {
@@ -82,12 +118,23 @@ export interface Task {
   hours_saved_per_week?: number | null;
 }
 
+// v3: tasks now live inside categories under each department
+export interface TaskCategory {
+  name: string;
+  tasks_total: number;
+  tasks_automated: number;
+  hours_saved_per_week: number;
+  tasks: Task[];
+}
+
 export interface TasksDepartment {
   slug: DeptSlug;
   name: string;
   tasks_automated: number;
   tasks_total: number;
-  tasks: Task[];
+  // v3 source-of-truth: tasks grouped by category. Empty categories are
+  // dropped by the build script — every entry has at least one task.
+  categories: TaskCategory[];
 }
 
 export interface TasksData {
@@ -101,4 +148,13 @@ export interface TasksData {
     tasks_by_status: { done: number; queued: number; todo: number };
   };
   departments: TasksDepartment[];
+}
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+/** Flatten a department's categorised tasks back into a single list, preserving
+ *  category order (declared order from `dept-mapping.yml`). Use this anywhere
+ *  the UI still wants a flat per-dept view (e.g. mind-map nodes, filters). */
+export function flattenDepartmentTasks(dept: TasksDepartment): Task[] {
+  return (dept.categories ?? []).flatMap((c) => c.tasks);
 }
