@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { TasksData, TaskStatus, TaskImportance, AutomationMode } from "@/types/dashboard";
+import type {
+  TasksData,
+  TaskStatus,
+  TaskImportance,
+  AutomationMode,
+  TaskCategory,
+  Task,
+} from "@/types/dashboard";
 import { PageHeading } from "./PageHeading";
 import { TasksDepartmentSection } from "./TasksDepartmentSection";
 import { formatHours } from "@/lib/format";
@@ -51,6 +58,44 @@ function FilterSelect({
   );
 }
 
+/** Apply task-level filters to a category. Returns null if the category is
+ *  empty after filtering so we can drop it from the rendered output. */
+function filterCategory(
+  cat: TaskCategory,
+  importance: ImportanceFilter,
+  status: StatusFilter,
+  mode: ModeFilter
+): TaskCategory | null {
+  const filteredTasks = cat.tasks.filter((t) => {
+    if (importance !== ALL && t.importance !== importance) return false;
+    if (status !== ALL && t.status !== status) return false;
+    if (mode !== ALL && (t.mode == null || t.mode !== mode)) return false;
+    return true;
+  });
+  if (filteredTasks.length === 0) return null;
+
+  // Recompute the in-header counts so the badge matches the visible rows.
+  let tasksAutomated = 0;
+  let hoursSaved = 0;
+  for (const t of filteredTasks) {
+    if (t.automated_by.length > 0) {
+      tasksAutomated++;
+      const saved =
+        t.hours_saved_per_week ??
+        (typeof t.hours_per_week === "number" ? t.hours_per_week : 0);
+      hoursSaved += saved;
+    }
+  }
+
+  return {
+    ...cat,
+    tasks: filteredTasks,
+    tasks_total: filteredTasks.length,
+    tasks_automated: tasksAutomated,
+    hours_saved_per_week: hoursSaved,
+  };
+}
+
 export function TasksLedger({ tasksData }: TasksLedgerProps) {
   const { stats, departments } = tasksData;
 
@@ -89,34 +134,43 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
     { value: "event", label: "Event" },
   ];
 
-  // Apply filters to departments
+  // Apply filters to departments → categories → tasks. Drop empty leaves.
   const filteredDepartments = useMemo(() => {
     return departments
       .filter((d) => deptFilter === ALL || d.slug === deptFilter)
       .map((d) => {
-        const filteredTasks = d.tasks.filter((t) => {
-          if (importanceFilter !== ALL && t.importance !== importanceFilter) return false;
-          if (statusFilter !== ALL && t.status !== statusFilter) return false;
-          // mode filter: exclude tasks with no mode (null/undefined) when a specific mode is selected
-          if (modeFilter !== ALL && (t.mode == null || t.mode !== modeFilter)) return false;
-          return true;
-        });
-        return { ...d, tasks: filteredTasks };
+        const filteredCats = (d.categories ?? [])
+          .map((c) => filterCategory(c, importanceFilter, statusFilter, modeFilter))
+          .filter((c): c is TaskCategory => c !== null);
+
+        // Aggregate dept-level counts from the surviving categories.
+        const tasksTotal = filteredCats.reduce((sum, c) => sum + c.tasks_total, 0);
+        const tasksAutomated = filteredCats.reduce(
+          (sum, c) => sum + c.tasks_automated,
+          0
+        );
+
+        return {
+          ...d,
+          categories: filteredCats,
+          tasks_total: tasksTotal,
+          tasks_automated: tasksAutomated,
+        };
       })
-      .filter((d) => d.tasks.length > 0);
+      .filter((d) => d.categories.length > 0);
   }, [departments, deptFilter, importanceFilter, statusFilter, modeFilter]);
 
-  // Dynamic stat line based on filtered tasks
+  // Dynamic stat line based on filtered tasks (flatten categories for counting)
   const filteredStats = useMemo(() => {
     let automated = 0;
     let total = 0;
     let hours = 0;
     for (const d of filteredDepartments) {
-      for (const t of d.tasks) {
+      const tasks: Task[] = (d.categories ?? []).flatMap((c) => c.tasks);
+      for (const t of tasks) {
         total++;
         if (t.automated_by.length > 0) {
           automated++;
-          // v0.2: prefer hours_saved_per_week; fall back to legacy hours_per_week
           const saved =
             t.hours_saved_per_week ??
             (typeof t.hours_per_week === "number" ? t.hours_per_week : 0);
@@ -176,7 +230,7 @@ export function TasksLedger({ tasksData }: TasksLedgerProps) {
             name={d.name}
             tasksAutomated={d.tasks_automated}
             tasksTotal={d.tasks_total}
-            tasks={d.tasks}
+            categories={d.categories}
           />
         ))
       )}
