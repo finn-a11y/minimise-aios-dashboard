@@ -1,6 +1,6 @@
 {
   "$schema_version": "3",
-  "generated_at": "2026-05-13T00:28:35Z",
+  "generated_at": "2026-05-13T02:40:11Z",
   "instance": {
     "name": "Minimise",
     "logo_text": "Minimise",
@@ -432,42 +432,8 @@
       "slug": "delivery",
       "name": "Delivery",
       "tasks_automated": 1,
-      "tasks_total": 12,
+      "tasks_total": 10,
       "categories": [
-        {
-          "name": "CRM management",
-          "tasks_total": 2,
-          "tasks_automated": 0,
-          "hours_saved_per_week": 0,
-          "tasks": [
-            {
-              "name": "CRM hygiene audit skill (stale tasks, duplicates, orphans, missing fields)",
-              "short_name": "CRM hygiene audit",
-              "importance": "medium",
-              "queued": false,
-              "status": "todo",
-              "mode": null,
-              "modes": [],
-              "manual_hours_per_week": null,
-              "automated_hours_per_week": null,
-              "hours_saved_per_week": null,
-              "automated_by": []
-            },
-            {
-              "name": "Pipeline lifecycle move automation (Prospect to Active to Archived folder mv)",
-              "short_name": "Lifecycle folder moves",
-              "importance": "medium",
-              "queued": false,
-              "status": "todo",
-              "mode": null,
-              "modes": [],
-              "manual_hours_per_week": null,
-              "automated_hours_per_week": null,
-              "hours_saved_per_week": null,
-              "automated_by": []
-            }
-          ]
-        },
         {
           "name": "Client communications",
           "tasks_total": 5,
@@ -632,7 +598,7 @@
       "slug": "operations",
       "name": "Operations",
       "tasks_automated": 6,
-      "tasks_total": 38,
+      "tasks_total": 40,
       "categories": [
         {
           "name": "Task management",
@@ -837,6 +803,40 @@
             {
               "name": "Triage incoming Gmail with auto-labels and priority",
               "short_name": "Triage Gmail",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            }
+          ]
+        },
+        {
+          "name": "CRM management",
+          "tasks_total": 2,
+          "tasks_automated": 0,
+          "hours_saved_per_week": 0,
+          "tasks": [
+            {
+              "name": "CRM hygiene audit skill (stale tasks, duplicates, orphans, missing fields)",
+              "short_name": "CRM hygiene audit",
+              "importance": "medium",
+              "queued": false,
+              "status": "todo",
+              "mode": null,
+              "modes": [],
+              "manual_hours_per_week": null,
+              "automated_hours_per_week": null,
+              "hours_saved_per_week": null,
+              "automated_by": []
+            },
+            {
+              "name": "Pipeline lifecycle move automation (Prospect to Active to Archived folder mv)",
+              "short_name": "Lifecycle folder moves",
               "importance": "medium",
               "queued": false,
               "status": "todo",
