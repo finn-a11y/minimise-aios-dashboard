@@ -1,0 +1,9 @@
+{
+  "tenant_id": "b25d41e9-b574-43e2-8437-6a4615e85687",
+  "tenant_slug": "minimise",
+  "tenant_name": "Minimise",
+  "tagline": "Building the AIOS in public",
+  "logo_path": "/logo.png",
+  "accent_hex": null,
+  "live_url": "https://aios.minimise.co.nz"
+}

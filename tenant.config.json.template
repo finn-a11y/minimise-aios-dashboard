@@ -1,0 +1,22 @@
+{
+  "_comment_tenant_id": "REQUIRED. UUID for this tenant. Generate with `uuidgen` and seed the same value into the tenants table in Supabase.",
+  "tenant_id": "",
+
+  "_comment_tenant_slug": "REQUIRED. URL-safe slug for the tenant (e.g. 'acme'). Used in subdomain routing and asset paths.",
+  "tenant_slug": "",
+
+  "_comment_tenant_name": "REQUIRED. Display name shown in the header and page titles (e.g. 'Acme Co').",
+  "tenant_name": "",
+
+  "_comment_tagline": "OPTIONAL. Short subtitle shown under the tenant name in the header. Set null to hide.",
+  "tagline": "",
+
+  "_comment_logo_path": "REQUIRED. Path (relative to /public) to the tenant's logo. Drop the logo file into /public and reference it here (e.g. '/logo.png' or '/acme-logo.svg').",
+  "logo_path": "/logo.png",
+
+  "_comment_accent_hex": "OPTIONAL. Override the emerald brand accent for this tenant. Set null to keep the locked emerald. NOTE: per portal CLAUDE.md the brand is locked — only use this for justified per-client requests.",
+  "accent_hex": null,
+
+  "_comment_live_url": "REQUIRED. The canonical live URL of this dashboard (used in OG tags + share links).",
+  "live_url": ""
+}
