@@ -1,6 +1,6 @@
 import type { Automation } from "@/types/dashboard";
-import { StatusPill } from "./StatusPill";
 import { formatHours } from "@/lib/format";
+import { AutomationList } from "./AutomationList";
 
 type DepartmentCardProps = {
   slug: string;
@@ -51,24 +51,7 @@ export function DepartmentCard({
           </div>
         </dl>
       </summary>
-      {automations.length > 0 && (
-        <ul className="mt-6 pt-6 border-t border-line flex flex-col gap-4">
-          {automations.map((a) => (
-            <li key={a.skill} className="flex flex-col gap-1.5">
-              <div className="flex items-center gap-3 flex-wrap">
-                <StatusPill status={a.status} />
-                <span className="font-semibold text-ink">{a.name}</span>
-                <span className="text-xs text-ink-muted">
-                  {formatHours(a.hours_per_week)}h
-                </span>
-              </div>
-              <p className="text-sm text-ink-muted leading-snug">
-                {a.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      )}
+      <AutomationList automations={automations} />
     </details>
   );
 }
