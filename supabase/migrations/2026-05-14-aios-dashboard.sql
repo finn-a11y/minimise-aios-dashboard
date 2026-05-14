@@ -281,4 +281,15 @@ GRANT SELECT ON public.coming_next        TO authenticated;
 GRANT SELECT ON public.skill_executions   TO authenticated;
 GRANT SELECT ON public.task_weekly_stats  TO authenticated;
 
--- service_role keeps full access automatically (bypasses RLS).
+-- service_role — RLS is bypassed but table-level GRANTs are still required
+-- because the Supabase project has "automatically expose new tables" OFF.
+GRANT USAGE ON SCHEMA public TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.tenants            TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.departments        TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.task_categories    TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.skills             TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.tasks              TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.coming_next        TO service_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.skill_executions   TO service_role;
+GRANT SELECT                          ON public.task_weekly_stats TO service_role;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO service_role;
